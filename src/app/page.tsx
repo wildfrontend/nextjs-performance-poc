@@ -4,13 +4,12 @@ export default function Home() {
   return (
     <div>
       <div style={{
-        display:'flex',
-        gap:"8px"
+        display: 'flex',
+        gap: "8px"
       }}>
-        <Link href="/images" prefetch={false}>Icon by webp</Link>
+        <Link href="/svg-in-image" prefetch={false}>Icon svg file import by next/image</Link>
         <Link href="/svg" prefetch={false}>Icon by svg</Link>
       </div>
-
     </div>
   );
 }
