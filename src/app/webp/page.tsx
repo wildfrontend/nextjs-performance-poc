@@ -1,25 +1,25 @@
 import Image from "next/image"
-import LoLIcon from '@/assets/sitesections/10_lol.svg?url'
-import CSIcon from '@/assets/sitesections/13_counterstrike.svg?url'
-import HearthstoneIcon from '@/assets/sitesections/14_hearthstone.svg?url'
-import OverwatchIcon from '@/assets/sitesections/17_overwatch.svg?url'
-import PubgMIcon from '@/assets/sitesections/20_pubg-mobile.svg?url'
-import ValorantIcon from '@/assets/sitesections/21_valorant.svg?url'
-import WiftIcon from '@/assets/sitesections/22_wild-rift.svg?url'
-import MLOLIcon from '@/assets/sitesections/23_mobile-legends.svg?url'
-import AOVIcon from '@/assets/sitesections/24_arena-of-valor.svg?url'
-import EntertainmentIcon from '@/assets/sitesections/25_entertainment.svg?url'
-import CODMIcon from '@/assets/sitesections/26_call-of-duty-mobile.svg?url'
-import FIFAIcon from '@/assets/sitesections/27_fifa.svg?url'
-import SC2Icon from '@/assets/sitesections/2_starcraft2.svg?url'
-import WOWIcon from '@/assets/sitesections/6_wow.svg?url'
-import Dota2Icon from '@/assets/sitesections/9_dota2.svg?url'
-import GosugamerIcon from '@/assets/sitesections/all-esports.svg?url'
+import LoLIcon from '@/assets/webp/10_lol.webp'
+import CSIcon from '@/assets/webp/13_counterstrike.webp'
+import HearthstoneIcon from '@/assets/webp/14_hearthstone.webp'
+import OverwatchIcon from '@/assets/webp/17_overwatch.webp'
+import PubgMIcon from '@/assets/webp/20_pubg-mobile.webp'
+import ValorantIcon from '@/assets/webp/21_valorant.webp'
+import WiftIcon from '@/assets/webp/22_wild-rift.webp'
+import MLOLIcon from '@/assets/webp/23_mobile-legends.webp'
+import AOVIcon from '@/assets/webp/24_arena-of-valor.webp'
+import EntertainmentIcon from '@/assets/webp/25_entertainment.webp'
+import CODMIcon from '@/assets/webp/26_call-of-duty-mobile.webp'
+import FIFAIcon from '@/assets/webp/27_fifa.webp'
+import SC2Icon from '@/assets/webp/2_starcraft2.webp'
+import WOWIcon from '@/assets/webp/6_wow.webp'
+import Dota2Icon from '@/assets/webp/9_dota2.webp'
+import GosugamerIcon from '@/assets/webp/all-esports.webp'
 
 const liststyle = { display: "flex", gap: "8px", alignItems: "center" }
 
 export default function Page() {
-  console.log("import svg by image")
+  console.log("webp")
   return (
     <div>
       <div style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column", gap: "16px" }}>

@@ -9,6 +9,7 @@ export default function Home() {
       }}>
         <Link href="/svg-in-image" prefetch={false}>Icon svg file import by next/image</Link>
         <Link href="/svg" prefetch={false}>Icon by svg</Link>
+        <Link href="/webp" prefetch={false}>Icon by webp</Link>
       </div>
     </div>
   );

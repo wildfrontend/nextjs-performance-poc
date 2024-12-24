@@ -25,52 +25,52 @@ export default function Page() {
       <div style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column", gap: "16px" }}>
 
         <div style={liststyle}>
-          <LoLIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>LoL</div>
+          <LoLIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>LoL</div>
         </div>
         <div style={liststyle}>
-          <CSIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>Counterstrike</div>
+          <CSIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Counterstrike</div>
         </div>
         <div style={liststyle}>
-          <HearthstoneIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>Hearthstone</div>
+          <HearthstoneIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Hearthstone</div>
         </div>
         <div style={liststyle}>
-          <OverwatchIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>Overwatch</div>
+          <OverwatchIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Overwatch</div>
         </div>
         <div style={liststyle}>
-          <PubgMIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>PUBG Mobile</div>
+          <PubgMIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>PUBG Mobile</div>
         </div>
         <div style={liststyle}>
-          <ValorantIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>Valorant</div>
+          <ValorantIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Valorant</div>
         </div>
         <div style={liststyle}>
-          <WiftIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>Widl Rift</div>
+          <WiftIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Widl Rift</div>
         </div>
         <div style={liststyle}>
-          <MLOLIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>Mobile Legend</div>
+          <MLOLIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Mobile Legend</div>
         </div>
         <div style={liststyle}>
-          <AOVIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>Arena Of Valor</div>
+          <AOVIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Arena Of Valor</div>
         </div>
         <div style={liststyle}>
-          <EntertainmentIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>Entertainmentr</div>
+          <EntertainmentIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Entertainmentr</div>
         </div>
         <div style={liststyle}>
-          <CODMIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>Call of Duty Mobile</div>
+          <CODMIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Call of Duty Mobile</div>
         </div>
         <div style={liststyle}>
-          <FIFAIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>FIFA</div>
+          <FIFAIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>FIFA</div>
         </div>
         <div style={liststyle}>
-          <SC2Icon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>SC2</div>
+          <SC2Icon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>SC2</div>
         </div>
         <div style={liststyle}>
-          <WOWIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>WOW</div>
+          <WOWIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>WOW</div>
         </div>
         <div style={liststyle}>
-          <Dota2Icon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>Dota2</div>
+          <Dota2Icon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Dota2</div>
         </div>
         <div style={liststyle}>
-          <GosugamerIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="48px" height="48px" /><div>All Esports</div>
+          <GosugamerIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>All Esports</div>
         </div>
       </div>
     </div>
