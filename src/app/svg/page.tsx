@@ -43,7 +43,7 @@ export default function Page() {
           <ValorantIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Valorant</div>
         </div>
         <div style={liststyle}>
-          <WiftIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Widl Rift</div>
+          <WiftIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Wild Rift</div>
         </div>
         <div style={liststyle}>
           <MLOLIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>Mobile Legend</div>
