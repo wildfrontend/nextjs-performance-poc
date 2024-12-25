@@ -16,13 +16,14 @@ import WOWIcon from '@/assets/webpx2/6_wow.webp'
 import Dota2Icon from '@/assets/webpx2/9_dota2.webp'
 import GosugamerIcon from '@/assets/webpx2/all-esports.webp'
 import { liststyle } from "@/styles/css"
+import { times } from "@/utils/times"
 
 
 export default function Page() {
   console.log("webpx2 loadmore")
   return (
     <div>
-      {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19].map((index) => {
+      {times(1000).map((_, index) => {
         return (
           <div key={index} style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column" }} >
             <div style={liststyle}>
