@@ -22,7 +22,7 @@ export default function Page() {
   console.log("import svg by image")
   return (
     <div>
-      {times(500).map((_, index) => {
+      {times(100).map((_, index) => {
         return (
           <div key={index} style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column" }}>
             <div style={liststyle}>
