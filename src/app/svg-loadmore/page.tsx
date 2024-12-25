@@ -23,7 +23,7 @@ export default function Page() {
     <div>
       {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) => {
         return (
-          <div key={index} style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div key={index} style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column" }}>
             <div style={liststyle}>
               <LoLIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>LoL</div>
             </div>

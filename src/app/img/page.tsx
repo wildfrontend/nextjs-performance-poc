@@ -20,7 +20,7 @@ export default function Page() {
   console.log("img")
   return (
     <div>
-      <div style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column", gap: "16px" }}>
+      <div style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column" }}>
         <div style={liststyle}>
           <img loading="eager" src={LoLIcon.src} height={24} width={24} alt="lol" /><div>LoL</div>
         </div>

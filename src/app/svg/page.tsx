@@ -21,8 +21,7 @@ export default function Page() {
   console.log("svg")
   return (
     <div>
-      <div style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column", gap: "16px" }}>
-
+      <div style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column" }}>
         <div style={liststyle}>
           <LoLIcon preserveAspectRatio="none" viewBox="0 0 24 24" width="24px" height="24px" /><div>LoL</div>
         </div>
