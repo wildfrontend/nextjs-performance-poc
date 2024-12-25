@@ -21,7 +21,7 @@ export default function Page() {
   console.log("svg")
   return (
     <div>
-      {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) => {
+      {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19].map((index) => {
         return (
           <div key={index} style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column" }}>
             <div style={liststyle}>
