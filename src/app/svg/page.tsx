@@ -15,8 +15,7 @@ import SC2Icon from '@/assets/sitesections/2_starcraft2.svg'
 import WOWIcon from '@/assets/sitesections/6_wow.svg'
 import Dota2Icon from '@/assets/sitesections/9_dota2.svg'
 import GosugamerIcon from '@/assets/sitesections/all-esports.svg'
-
-const liststyle = { display: "flex", gap: "8px", alignItems: "center" }
+import { liststyle } from "@/styles/css"
 
 export default function Page() {
   console.log("svg")

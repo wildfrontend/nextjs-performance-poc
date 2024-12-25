@@ -15,14 +15,13 @@ import SC2Icon from '@/assets/sitesections/2_starcraft2.svg?url'
 import WOWIcon from '@/assets/sitesections/6_wow.svg?url'
 import Dota2Icon from '@/assets/sitesections/9_dota2.svg?url'
 import GosugamerIcon from '@/assets/sitesections/all-esports.svg?url'
-
-const liststyle = { display: "flex", gap: "8px", alignItems: "center" }
+import { liststyle } from "@/styles/css"
 
 export default function Page() {
   console.log("import svg by image")
   return (
     <div>
-      {[0, 1, 2, 3, 4].map((index) => {
+      {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) => {
         return (
           <div key={index} style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column", gap: "16px" }}>
             <div style={liststyle}>

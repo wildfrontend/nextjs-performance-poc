@@ -15,8 +15,7 @@ import SC2Icon from '@/assets/sitesections/2_starcraft2.svg?url'
 import WOWIcon from '@/assets/sitesections/6_wow.svg?url'
 import Dota2Icon from '@/assets/sitesections/9_dota2.svg?url'
 import GosugamerIcon from '@/assets/sitesections/all-esports.svg?url'
-
-const liststyle = { display: "flex", gap: "8px", alignItems: "center" }
+import { liststyle } from "@/styles/css"
 
 export default function Page() {
   console.log("import svg by image")
@@ -57,10 +56,10 @@ export default function Page() {
         </div>
         <div style={liststyle}>
           <Image loading="eager" quality={100} src={FIFAIcon} height={24} width={24} alt="FIFA" /><div>FIFA</div>
-        </div>    
+        </div>
         <div style={liststyle}>
           <Image loading="eager" quality={100} src={SC2Icon} height={24} width={24} alt="SC2" /><div>SC2</div>
-        </div>    
+        </div>
         <div style={liststyle}>
           <Image loading="eager" quality={100} src={WOWIcon} height={24} width={24} alt="WOW" /><div>WOW</div>
         </div>
@@ -68,7 +67,7 @@ export default function Page() {
           <Image loading="eager" quality={100} src={Dota2Icon} height={24} width={24} alt="Dota2" /><div>Dota2</div>
         </div>
         <div style={liststyle}>
-          <Image loading="eager" quality={100} src={GosugamerIcon} height={24} width={24} alt="All"  /><div>All Esports</div>
+          <Image loading="eager" quality={100} src={GosugamerIcon} height={24} width={24} alt="All" /><div>All Esports</div>
         </div>
       </div>
     </div>

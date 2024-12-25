@@ -15,16 +15,16 @@ import SC2Icon from '@/assets/webp/2_starcraft2.webp'
 import WOWIcon from '@/assets/webp/6_wow.webp'
 import Dota2Icon from '@/assets/webp/9_dota2.webp'
 import GosugamerIcon from '@/assets/webp/all-esports.webp'
+import { liststyle } from "@/styles/css"
 
-const liststyle = { display: "flex", gap: "8px", alignItems: "center" }
 
 export default function Page() {
   console.log("webp")
   return (
     <div>
-      {[0, 1, 2, 3, 4].map((index) => {
+      {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((index) => {
         return (
-          <div key={index} style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div key={index} style={{ width: "300px", minHeight: "300px", margin: "0 auto", backgroundColor: "gray", display: "flex", flexDirection: "column" }} >
             <div style={liststyle}>
               <Image loading="eager" quality={100} src={LoLIcon} height={24} width={24} alt="lol" /><div>LoL</div>
             </div>
@@ -48,7 +48,8 @@ export default function Page() {
             </div>
             <div style={liststyle}>
               <Image loading="eager" quality={100} src={MLOLIcon} height={24} width={24} alt="Mobile" /><div>Mobile Legend</div>
-            </div>  <div style={liststyle}>
+            </div>
+            <div style={liststyle}>
               <Image loading="eager" quality={100} src={AOVIcon} height={24} width={24} alt="Arena" /><div>Arena Of Valor</div>
             </div>
             <div style={liststyle}>
@@ -75,6 +76,6 @@ export default function Page() {
           </div>
         )
       })}
-    </div>
+    </div >
   );
 }
