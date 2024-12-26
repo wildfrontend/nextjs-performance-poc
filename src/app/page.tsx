@@ -9,6 +9,7 @@ export default function Home() {
         gap: '16px',
       }}
     >
+      {/* Svg vs webp load */}
       <div>
         <h2>SVG vs Webp</h2>
         <h3>Default</h3>
@@ -47,6 +48,20 @@ export default function Home() {
           </Link>
         </div>
         <hr />
+      </div>
+      {/* ANCHOR Image */}
+      <div>
+        <h2>Image Optmize</h2>
+        <div
+          style={{
+            display: 'flex',
+            gap: '16px',
+          }}
+        >
+          <Link href="/image-optmize/next-image" prefetch={false}>
+            Next Image
+          </Link>
+        </div>
       </div>
     </div>
   );
