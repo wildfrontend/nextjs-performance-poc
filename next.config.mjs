@@ -29,7 +29,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    deviceSizes: [375, 500, 600, 700, 960, 1024, 1440,], // most mobile devices are in width of 500.
+    deviceSizes: [375, 500, 600, 700, 960, 1200], // most mobile devices are in width of 500.
     imageSizes: [16, 32, 48, 64, 96, 128, 256],
     remotePatterns: [
       {

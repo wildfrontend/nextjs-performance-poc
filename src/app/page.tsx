@@ -61,6 +61,9 @@ export default function Home() {
           <Link href="/image-optmize/next-image" prefetch={false}>
             Next Image
           </Link>
+          <Link href="/image-optmize/next-image-loadmore" prefetch={false}>
+            Next Image Load More
+          </Link>
         </div>
       </div>
     </div>

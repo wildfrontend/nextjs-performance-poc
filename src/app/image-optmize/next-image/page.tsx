@@ -19,7 +19,7 @@ const Page: React.FC = () => {
           loading="eager"
           src={item.headlineImagePath}
           fill
-          sizes={imageSizes('375w', '700w', '600px')}
+          sizes={imageSizes('375px', '600px', '400px')}
           style={{ objectFit: 'cover' }}
           alt={item.headlineImageText}
         />
