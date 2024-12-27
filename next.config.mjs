@@ -28,6 +28,24 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    deviceSizes: [375, 500, 600, 700, 960, 1024, 1440,], // most mobile devices are in width of 500.
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+    remotePatterns: [
+      {
+        hostname: 'static.gosugamers.net',
+      },
+      {
+        hostname: 'static.staging.gosugamers.net',
+      },
+      {
+        hostname: 'i.ytimg.com',
+      },
+      {
+        hostname: 'static-cdn.jtvnw.net',
+      },
+    ],
+  }
 };
 
 export default nextConfig;
