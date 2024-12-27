@@ -16,7 +16,8 @@ const Page: React.FC = () => {
         }}
       >
         <GosuImage
-          priority
+          fetchPriority="high"
+          loading="eager"
           src={item.headlineImagePath}
           fill
           sizes={imageSizes('375px', '600px', '400px')}

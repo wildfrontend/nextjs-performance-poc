@@ -6,7 +6,8 @@ const Page: React.FC = () => {
   let articleCount = 0;
   return (
     <div style={{ margin: '0 auto', maxWidth: '600px' }}>
-      {articles.map((item) => {
+      {articles.map((item, index) => {
+        console.log(index);
         articleCount++;
         return (
           <div
@@ -18,7 +19,8 @@ const Page: React.FC = () => {
             }}
           >
             <GosuImage
-              priority={articleCount < 4}
+              fetchPriority={index === 0 ? 'high' : 'low'}
+              loading={articleCount > 4 ? 'lazy' : 'eager'}
               src={item.headlineImagePath}
               fill
               sizes={imageSizes('375px', '600px', '400px')}
