@@ -75,8 +75,8 @@ export default function Home() {
             gap: '16px',
           }}
         >
-          <Link href="/third-party-optmize/partytown" prefetch={false}>
-            Partytown
+          <Link href="/third-party-optmize/origin" prefetch={false}>
+            Default Third party
           </Link>
         </div>
       </div>
