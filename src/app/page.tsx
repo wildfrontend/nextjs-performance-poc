@@ -66,6 +66,20 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      {/* ANCHOR Third party optmize */}
+      <div>
+        <h2>Third party optmize </h2>
+        <div
+          style={{
+            display: 'flex',
+            gap: '16px',
+          }}
+        >
+          <Link href="/third-party-optmize/partytown" prefetch={false}>
+            Partytown
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

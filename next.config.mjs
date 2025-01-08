@@ -45,7 +45,10 @@ const nextConfig = {
         hostname: 'static-cdn.jtvnw.net',
       },
     ],
-  }
+  },
+  experimental: {
+    nextScriptWorkers: true,
+  },
 };
 
 export default nextConfig;
