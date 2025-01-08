@@ -23,6 +23,7 @@ const InitGPT: React.FC = () => {
     <>
       <Script
         async
+        id="gpt-script"
         strategy="lazyOnload"
         src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
       />
@@ -30,6 +31,7 @@ const InitGPT: React.FC = () => {
       {/* Inline configuration script */}
       <Script
         strategy="lazyOnload"
+        id="init-gpt"
         dangerouslySetInnerHTML={{
           __html: `
             window.googletag = window.googletag || { cmd: [] };
