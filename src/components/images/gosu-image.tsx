@@ -14,9 +14,13 @@ const checkGosuCDN = (src: string) => {
   return isGosuCDN;
 };
 
-const GosuImage: React.FC<ComponentProps<typeof Image>> = ({ ...props }) => {
+const GosuImage: React.FC<ComponentProps<typeof Image>> = ({
+  alt,
+  ...props
+}) => {
   return (
     <Image
+      alt={alt ?? ''}
       loader={({ src, width }) => {
         try {
           const isGosuCDN = checkGosuCDN(src);

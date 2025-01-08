@@ -20,7 +20,7 @@ if (typeof window !== 'undefined') {
   });
 }
 
-let adSlots: Record<string, googletag.Slot> = {};
+const adSlots: Record<string, googletag.Slot> = {};
 
 const DefineAdSlot: React.FC<{
   adUnit: string;
@@ -47,7 +47,7 @@ const DefineAdSlot: React.FC<{
         }
       });
     };
-  }, []);
+  }, [adUnit, divId, size]);
 
   // Create the ad slot container.
   return (
