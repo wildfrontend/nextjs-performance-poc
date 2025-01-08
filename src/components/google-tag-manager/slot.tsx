@@ -4,22 +4,6 @@ import { useEffect } from 'react';
 
 import adSlotStyles from '@/styles/adslot.module.css';
 
-// initial
-if (typeof window !== 'undefined') {
-  // Ensure we can interact with the GPT command array.
-  window.googletag = window.googletag || { cmd: [] };
-
-  // Prepare GPT to display ads.
-  googletag.cmd.push(() => {
-    // Disable initial load, to precisely control when ads are requested.
-    // googletag.pubads().disableInitialLoad();
-
-    // Enable SRA and services.
-    googletag.pubads().enableSingleRequest();
-    googletag.enableServices();
-  });
-}
-
 const adSlots: Record<string, googletag.Slot> = {};
 
 const DefineAdSlot: React.FC<{

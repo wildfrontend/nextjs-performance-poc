@@ -78,6 +78,16 @@ export default function Home() {
           <Link href="/third-party-optmize/origin" prefetch={false}>
             Default Third party
           </Link>
+          <div
+            style={{
+              display: 'flex',
+              gap: '16px',
+            }}
+          >
+            <Link href="/third-party-optmize/lazy-load" prefetch={false}>
+              Lazy onload
+            </Link>
+          </div>
         </div>
       </div>
     </div>

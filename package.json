@@ -10,6 +10,7 @@
     "prettier": "npx prettier --write ./src"
   },
   "dependencies": {
+    "@next/third-parties": "^15.1.4",
     "next": "15.1.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
