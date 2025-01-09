@@ -1,22 +1,24 @@
 'use client';
 
-import Script from 'next/script';
-import { useEffect } from 'react';
+import Script, { ScriptProps } from 'next/script';
 
-const InitGPT: React.FC = () => {
-  useEffect(() => {
-    window.googletag = window.googletag || { cmd: [] };
-    googletag.cmd.push(() => {
-      googletag.pubads().enableSingleRequest();
-      googletag.enableServices();
-    });
-  }, []);
+if (typeof window !== 'undefined') {
+  window.googletag = window.googletag || { cmd: [] };
+  googletag.cmd.push(() => {
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+}
+
+const InitGPT: React.FC<{ strategy?: ScriptProps['strategy'] }> = ({
+  strategy,
+}) => {
   return (
     <>
       <Script
         async
         id="gpt-script"
-        strategy="lazyOnload"
+        strategy={strategy}
         src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
       />
     </>

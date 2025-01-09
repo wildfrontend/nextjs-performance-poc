@@ -28,7 +28,7 @@ export default function Page() {
   console.log('partytown');
   return (
     <div>
-      <InitGPT />
+      <InitGPT strategy="lazyOnload" />
       <section className={adSlotStyles.centered}>
         {slots.map((slot, i) => (
           <DefineAdSlot

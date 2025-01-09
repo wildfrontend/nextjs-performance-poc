@@ -12,9 +12,10 @@ const DefineAdSlot: React.FC<{
   divId: string;
 }> = ({ adUnit, size, divId }) => {
   useEffect(() => {
-    if (googletag) {
+    console.log({ googletag });
+    if (window.googletag) {
       // Register the slot with GPT when the component is loaded.
-      googletag.cmd.push(() => {
+      window.googletag.cmd.push(() => {
         const slot = googletag.defineSlot(adUnit, size, divId);
         if (slot) {
           slot.addService(googletag.pubads());
@@ -22,10 +23,9 @@ const DefineAdSlot: React.FC<{
           adSlots[divId] = slot;
         }
       });
-
       // Clean up the slot when the component is unloaded.
       return () => {
-        googletag.cmd.push(() => {
+        window.googletag.cmd.push(() => {
           if (adSlots[divId]) {
             googletag.destroySlots([adSlots[divId]]);
             delete adSlots[divId];

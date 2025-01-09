@@ -1,5 +1,4 @@
-import Script from 'next/script';
-
+import InitGPT from '@/components/google-tag-manager/init';
 import DefineAdSlot from '@/components/google-tag-manager/slot';
 import adSlotStyles from '@/styles/adslot.module.css';
 
@@ -13,13 +12,10 @@ const slots: { adUnit: string; size: googletag.GeneralSize; divId: string }[] =
   ];
 
 export default function Page() {
-  console.log('partytown');
+  console.log('origin');
   return (
     <div>
-      <Script
-        async
-        src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-      />
+      <InitGPT />
       <section className={adSlotStyles.centered}>
         {slots.map((slot, i) => (
           <DefineAdSlot
