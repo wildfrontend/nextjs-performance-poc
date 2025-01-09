@@ -2,7 +2,10 @@
 
 import dynamic from 'next/dynamic';
 
+import GosuImage from '@/components/images/gosu-image';
+import articles from '@/mocks/articles';
 import adSlotStyles from '@/styles/adslot.module.css';
+import imageSizes from '@/utils/image-size';
 
 const InitGPT = dynamic(() => import('@/components/google-tag-manager/init'), {
   ssr: false,
@@ -23,6 +26,7 @@ const slots: { adUnit: string; size: googletag.GeneralSize; divId: string }[] =
       size: [300, 250],
     },
   ];
+const item = articles[0];
 
 export default function Page() {
   console.log('partytown');
@@ -39,6 +43,24 @@ export default function Page() {
           />
         ))}
       </section>
+      <div
+        key={item.id}
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: '270px',
+        }}
+      >
+        <GosuImage
+          fetchPriority="high"
+          loading="eager"
+          src={item.headlineImagePath}
+          fill
+          sizes={imageSizes('375px', '600px', '400px')}
+          style={{ objectFit: 'cover' }}
+          alt={item.headlineImageText}
+        />
+      </div>
     </div>
   );
 }
