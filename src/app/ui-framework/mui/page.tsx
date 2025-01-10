@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid2';
 import React from 'react';
 
 import MainLayout from '@/components/ui-framework/mui/layouts/main';
-import componentSamples from '@/components/ui-framework/ui/collections';
+import componentSamples from '@/components/ui-framework/mui/ui/collections';
 
 const Page: React.FC = () => {
   return (

@@ -1,3 +1,12 @@
 import '@mui/material/styles';
-// https://github.com/mui/material-ui/issues/35910
-import type {} from '@mui/material/themeCssVarsAugmentation';
+
+/**
+ * ANCHOR Button
+ * refer https://github.com/mui/material-ui/issues/36273QD
+ */
+
+declare module '@mui/material/Button' {
+  interface ButtonPropsSizeOverrides {
+    circle: true;
+  }
+}

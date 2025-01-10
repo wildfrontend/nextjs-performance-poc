@@ -223,12 +223,7 @@ function EnhancedTableToolbar(props: EnhancedTableToolbarProps) {
           {numSelected} selected
         </Typography>
       ) : (
-        <Typography
-          component="div"
-          id="tableTitle"
-          sx={{ flex: '1 1 100%' }}
-          variant="t6"
-        >
+        <Typography component="div" id="tableTitle" sx={{ flex: '1 1 100%' }}>
           Nutrition
         </Typography>
       )}

@@ -27,11 +27,11 @@ const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
         </Toolbar>
       </AppBar>
       <Box
-        paddingTop="64px"
-        paddingBottom="64px"
         component="main"
         margin="0 auto"
         minHeight="100vh"
+        paddingBottom="64px"
+        paddingTop="64px"
         width="1024px"
       >
         {children}
