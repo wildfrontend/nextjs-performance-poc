@@ -39,8 +39,8 @@ const DefineAdSlot: React.FC<{
   return (
     <div
       className={`${adSlotStyles.adSlot} ${adSlotStyles.centered}`}
-      style={{ width: '300px', height: '250px' }}
       id={divId}
+      style={{ width: '300px', height: '250px' }}
     ></div>
   );
 };

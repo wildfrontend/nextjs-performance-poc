@@ -90,6 +90,20 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* ANCHOR Ui framwork */}
+      <div>
+        <h2> Ui framwork </h2>
+        <div
+          style={{
+            display: 'flex',
+            gap: '16px',
+          }}
+        >
+          <Link href="/ui-framework/mui" prefetch={false}>
+            MUI
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

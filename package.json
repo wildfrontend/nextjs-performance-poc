@@ -7,9 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "npx prettier --write ./src"
+    "prettier": "npx prettier --write ./src & eslint --fix ./src"
   },
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.3.1",
+    "@mui/lab": "^6.0.0-beta.22",
+    "@mui/material": "^6.3.1",
+    "@mui/material-nextjs": "^6.3.1",
     "@next/third-parties": "^15.1.4",
     "next": "15.1.2",
     "react": "^19.0.0",
@@ -19,13 +26,15 @@
     "@builder.io/partytown": "^0.10.3",
     "@eslint/eslintrc": "^3",
     "@svgr/webpack": "^8.1.0",
-    "@trivago/prettier-plugin-sort-imports": "^5.2.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.1",
     "@types/google-publisher-tag": "^1.20241202.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.2",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "prettier": "^3.4.2",
     "typescript": "^5"
   }
 }

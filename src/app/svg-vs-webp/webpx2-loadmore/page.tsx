@@ -38,177 +38,177 @@ export default function Page() {
           >
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={LoLIcon}
-                height={24}
-                width={24}
                 alt="lol"
+                height={24}
+                loading="eager"
+                src={LoLIcon}
+                unoptimized
+                width={24}
               />
               <div>LoL</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={CSIcon}
-                height={24}
-                width={24}
                 alt="Counterstrike"
+                height={24}
+                loading="eager"
+                src={CSIcon}
+                unoptimized
+                width={24}
               />
               <div>Counterstrike</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={HearthstoneIcon}
-                height={24}
-                width={24}
                 alt="Hearthstone"
+                height={24}
+                loading="eager"
+                src={HearthstoneIcon}
+                unoptimized
+                width={24}
               />
               <div>Hearthstone</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={OverwatchIcon}
-                height={24}
-                width={24}
                 alt="Overwatch"
+                height={24}
+                loading="eager"
+                src={OverwatchIcon}
+                unoptimized
+                width={24}
               />
               <div>Overwatch</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={PubgMIcon}
-                height={24}
-                width={24}
                 alt="PUBG"
+                height={24}
+                loading="eager"
+                src={PubgMIcon}
+                unoptimized
+                width={24}
               />
               <div>PUBG Mobile</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={ValorantIcon}
-                height={24}
-                width={24}
                 alt="Valorant"
+                height={24}
+                loading="eager"
+                src={ValorantIcon}
+                unoptimized
+                width={24}
               />
               <div>Valorant</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={WiftIcon}
-                height={24}
-                width={24}
                 alt="Wild"
+                height={24}
+                loading="eager"
+                src={WiftIcon}
+                unoptimized
+                width={24}
               />
               <div>Wild Rift</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={MLOLIcon}
-                height={24}
-                width={24}
                 alt="Mobile"
+                height={24}
+                loading="eager"
+                src={MLOLIcon}
+                unoptimized
+                width={24}
               />
               <div>Mobile Legend</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={AOVIcon}
-                height={24}
-                width={24}
                 alt="Arena"
+                height={24}
+                loading="eager"
+                src={AOVIcon}
+                unoptimized
+                width={24}
               />
               <div>Arena Of Valor</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={EntertainmentIcon}
-                height={24}
-                width={24}
                 alt="Entertainmentr"
+                height={24}
+                loading="eager"
+                src={EntertainmentIcon}
+                unoptimized
+                width={24}
               />
               <div>Entertainmentr</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={CODMIcon}
-                height={24}
-                width={24}
                 alt="Call"
+                height={24}
+                loading="eager"
+                src={CODMIcon}
+                unoptimized
+                width={24}
               />
               <div>Call of Duty Mobile</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={FIFAIcon}
-                height={24}
-                width={24}
                 alt="FIFA"
+                height={24}
+                loading="eager"
+                src={FIFAIcon}
+                unoptimized
+                width={24}
               />
               <div>FIFA</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={SC2Icon}
-                height={24}
-                width={24}
                 alt="SC2"
+                height={24}
+                loading="eager"
+                src={SC2Icon}
+                unoptimized
+                width={24}
               />
               <div>SC2</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={WOWIcon}
-                height={24}
-                width={24}
                 alt="WOW"
+                height={24}
+                loading="eager"
+                src={WOWIcon}
+                unoptimized
+                width={24}
               />
               <div>WOW</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={Dota2Icon}
-                height={24}
-                width={24}
                 alt="Dota2"
+                height={24}
+                loading="eager"
+                src={Dota2Icon}
+                unoptimized
+                width={24}
               />
               <div>Dota2</div>
             </div>
             <div style={liststyle}>
               <Image
-                loading="eager"
-                unoptimized
-                src={GosugamerIcon}
-                height={24}
-                width={24}
                 alt="All"
+                height={24}
+                loading="eager"
+                src={GosugamerIcon}
+                unoptimized
+                width={24}
               />
               <div>All Esports</div>
             </div>

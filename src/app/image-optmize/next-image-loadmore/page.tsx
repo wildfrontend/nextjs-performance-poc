@@ -19,12 +19,12 @@ const Page: React.FC = () => {
             }}
           >
             <GosuImage
-              fetchPriority={index === 0 ? 'high' : 'low'}
-              loading={articleCount > 4 ? 'lazy' : 'eager'}
-              src={item.headlineImagePath}
-              fill
-              sizes={imageSizes('375px', '600px', '400px')}
               alt={item.headlineImageText}
+              fetchPriority={index === 0 ? 'high' : 'low'}
+              fill
+              loading={articleCount > 4 ? 'lazy' : 'eager'}
+              sizes={imageSizes('375px', '600px', '400px')}
+              src={item.headlineImagePath}
             />
           </div>
         );

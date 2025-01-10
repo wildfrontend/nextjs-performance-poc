@@ -18,8 +18,8 @@ const InitGPT: React.FC<{ strategy?: ScriptProps['strategy'] }> = ({
       <Script
         async
         id="gpt-script"
-        strategy={strategy}
         src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+        strategy={strategy}
       />
     </>
   );

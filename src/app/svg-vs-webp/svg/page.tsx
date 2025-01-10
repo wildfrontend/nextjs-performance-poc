@@ -32,145 +32,145 @@ export default function Page() {
       >
         <div style={liststyle}>
           <LoLIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>LoL</div>
         </div>
         <div style={liststyle}>
           <CSIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>Counterstrike</div>
         </div>
         <div style={liststyle}>
           <HearthstoneIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>Hearthstone</div>
         </div>
         <div style={liststyle}>
           <OverwatchIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>Overwatch</div>
         </div>
         <div style={liststyle}>
           <PubgMIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>PUBG Mobile</div>
         </div>
         <div style={liststyle}>
           <ValorantIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>Valorant</div>
         </div>
         <div style={liststyle}>
           <WiftIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>Wild Rift</div>
         </div>
         <div style={liststyle}>
           <MLOLIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>Mobile Legend</div>
         </div>
         <div style={liststyle}>
           <AOVIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>Arena Of Valor</div>
         </div>
         <div style={liststyle}>
           <EntertainmentIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>Entertainmentr</div>
         </div>
         <div style={liststyle}>
           <CODMIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>Call of Duty Mobile</div>
         </div>
         <div style={liststyle}>
           <FIFAIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>FIFA</div>
         </div>
         <div style={liststyle}>
           <SC2Icon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>SC2</div>
         </div>
         <div style={liststyle}>
           <WOWIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>WOW</div>
         </div>
         <div style={liststyle}>
           <Dota2Icon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>Dota2</div>
         </div>
         <div style={liststyle}>
           <GosugamerIcon
+            height="24px"
             preserveAspectRatio="none"
             viewBox="0 0 24 24"
             width="24px"
-            height="24px"
           />
           <div>All Esports</div>
         </div>

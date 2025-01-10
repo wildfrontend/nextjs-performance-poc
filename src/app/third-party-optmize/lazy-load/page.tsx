@@ -37,9 +37,9 @@ export default function Page() {
         {slots.map((slot, i) => (
           <DefineAdSlot
             adUnit={slot.adUnit}
-            size={slot.size}
-            key={i}
             divId={slot.divId}
+            key={i}
+            size={slot.size}
           />
         ))}
       </section>
@@ -52,13 +52,13 @@ export default function Page() {
         }}
       >
         <GosuImage
-          fetchPriority="high"
-          loading="eager"
-          src={item.headlineImagePath}
-          fill
-          sizes={imageSizes('375px', '600px', '400px')}
-          style={{ objectFit: 'cover' }}
           alt={item.headlineImageText}
+          fetchPriority="high"
+          fill
+          loading="eager"
+          sizes={imageSizes('375px', '600px', '400px')}
+          src={item.headlineImagePath}
+          style={{ objectFit: 'cover' }}
         />
       </div>
     </div>

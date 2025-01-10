@@ -16,13 +16,13 @@ const Page: React.FC = () => {
         }}
       >
         <GosuImage
-          fetchPriority="high"
-          loading="eager"
-          src={item.headlineImagePath}
-          fill
-          sizes={imageSizes('375px', '600px', '400px')}
-          style={{ objectFit: 'cover' }}
           alt={item.headlineImageText}
+          fetchPriority="high"
+          fill
+          loading="eager"
+          sizes={imageSizes('375px', '600px', '400px')}
+          src={item.headlineImagePath}
+          style={{ objectFit: 'cover' }}
         />
       </div>
     </div>
