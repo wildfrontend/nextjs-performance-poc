@@ -28,6 +28,7 @@ const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
       </AppBar>
       <Box
         paddingTop="64px"
+        paddingBottom="64px"
         component="main"
         margin="0 auto"
         minHeight="100vh"
