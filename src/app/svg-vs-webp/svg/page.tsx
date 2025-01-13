@@ -14,7 +14,7 @@ import EntertainmentIcon from '@/assets/sitesections/svg/25_entertainment.svg';
 import CODMIcon from '@/assets/sitesections/svg/26_call-of-duty-mobile.svg';
 import FIFAIcon from '@/assets/sitesections/svg/27_fifa.svg';
 import GosugamerIcon from '@/assets/sitesections/svg/all-esports.svg';
-import { liststyle } from '@/styles/css';
+import ImgListItem from '@/components/images/item';
 
 export default function Page() {
   console.log('svg');
@@ -30,7 +30,7 @@ export default function Page() {
           flexDirection: 'column',
         }}
       >
-        <div style={liststyle}>
+        <ImgListItem>
           <LoLIcon
             height="24px"
             preserveAspectRatio="none"
@@ -38,8 +38,8 @@ export default function Page() {
             width="24px"
           />
           <div>LoL</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <CSIcon
             height="24px"
             preserveAspectRatio="none"
@@ -47,8 +47,8 @@ export default function Page() {
             width="24px"
           />
           <div>Counterstrike</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <HearthstoneIcon
             height="24px"
             preserveAspectRatio="none"
@@ -56,8 +56,8 @@ export default function Page() {
             width="24px"
           />
           <div>Hearthstone</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <OverwatchIcon
             height="24px"
             preserveAspectRatio="none"
@@ -65,8 +65,8 @@ export default function Page() {
             width="24px"
           />
           <div>Overwatch</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <PubgMIcon
             height="24px"
             preserveAspectRatio="none"
@@ -74,8 +74,8 @@ export default function Page() {
             width="24px"
           />
           <div>PUBG Mobile</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <ValorantIcon
             height="24px"
             preserveAspectRatio="none"
@@ -83,8 +83,8 @@ export default function Page() {
             width="24px"
           />
           <div>Valorant</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <WiftIcon
             height="24px"
             preserveAspectRatio="none"
@@ -92,8 +92,8 @@ export default function Page() {
             width="24px"
           />
           <div>Wild Rift</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <MLOLIcon
             height="24px"
             preserveAspectRatio="none"
@@ -101,8 +101,8 @@ export default function Page() {
             width="24px"
           />
           <div>Mobile Legend</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <AOVIcon
             height="24px"
             preserveAspectRatio="none"
@@ -110,8 +110,8 @@ export default function Page() {
             width="24px"
           />
           <div>Arena Of Valor</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <EntertainmentIcon
             height="24px"
             preserveAspectRatio="none"
@@ -119,8 +119,8 @@ export default function Page() {
             width="24px"
           />
           <div>Entertainmentr</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <CODMIcon
             height="24px"
             preserveAspectRatio="none"
@@ -128,8 +128,8 @@ export default function Page() {
             width="24px"
           />
           <div>Call of Duty Mobile</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <FIFAIcon
             height="24px"
             preserveAspectRatio="none"
@@ -137,8 +137,8 @@ export default function Page() {
             width="24px"
           />
           <div>FIFA</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <SC2Icon
             height="24px"
             preserveAspectRatio="none"
@@ -146,8 +146,8 @@ export default function Page() {
             width="24px"
           />
           <div>SC2</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <WOWIcon
             height="24px"
             preserveAspectRatio="none"
@@ -155,8 +155,8 @@ export default function Page() {
             width="24px"
           />
           <div>WOW</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Dota2Icon
             height="24px"
             preserveAspectRatio="none"
@@ -164,8 +164,8 @@ export default function Page() {
             width="24px"
           />
           <div>Dota2</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <GosugamerIcon
             height="24px"
             preserveAspectRatio="none"
@@ -173,7 +173,7 @@ export default function Page() {
             width="24px"
           />
           <div>All Esports</div>
-        </div>
+        </ImgListItem>
       </div>
     </div>
   );

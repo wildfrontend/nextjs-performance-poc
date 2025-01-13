@@ -16,7 +16,7 @@ import EntertainmentIcon from '@/assets/sitesections/webpx2/25_entertainment.web
 import CODMIcon from '@/assets/sitesections/webpx2/26_call-of-duty-mobile.webp';
 import FIFAIcon from '@/assets/sitesections/webpx2/27_fifa.webp';
 import GosugamerIcon from '@/assets/sitesections/webpx2/all-esports.webp';
-import { liststyle } from '@/styles/css';
+import ImgListItem from '@/components/images/item';
 
 export default function Page() {
   console.log('webpx2');
@@ -32,7 +32,7 @@ export default function Page() {
           flexDirection: 'column',
         }}
       >
-        <div style={liststyle}>
+        <ImgListItem>
           <Image
             alt="lol"
             height={24}
@@ -42,8 +42,8 @@ export default function Page() {
             width={24}
           />
           <div>LoL</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="Counterstrike"
             height={24}
@@ -53,8 +53,8 @@ export default function Page() {
             width={24}
           />
           <div>Counterstrike</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="Hearthstone"
             height={24}
@@ -64,8 +64,8 @@ export default function Page() {
             width={24}
           />
           <div>Hearthstone</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="Overwatch"
             height={24}
@@ -75,8 +75,8 @@ export default function Page() {
             width={24}
           />
           <div>Overwatch</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="PUBG"
             height={24}
@@ -86,8 +86,8 @@ export default function Page() {
             width={24}
           />
           <div>PUBG Mobile</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="Valorant"
             height={24}
@@ -97,8 +97,8 @@ export default function Page() {
             width={24}
           />
           <div>Valorant</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="Wild"
             height={24}
@@ -108,8 +108,8 @@ export default function Page() {
             width={24}
           />
           <div>Wild Rift</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="Mobile"
             height={24}
@@ -119,8 +119,8 @@ export default function Page() {
             width={24}
           />
           <div>Mobile Legend</div>
-        </div>{' '}
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="Arena"
             height={24}
@@ -130,8 +130,8 @@ export default function Page() {
             width={24}
           />
           <div>Arena Of Valor</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="Entertainmentr"
             height={24}
@@ -141,8 +141,8 @@ export default function Page() {
             width={24}
           />
           <div>Entertainmentr</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="Call"
             height={24}
@@ -152,8 +152,8 @@ export default function Page() {
             width={24}
           />
           <div>Call of Duty Mobile</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="FIFA"
             height={24}
@@ -163,8 +163,8 @@ export default function Page() {
             width={24}
           />
           <div>FIFA</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="SC2"
             height={24}
@@ -174,8 +174,8 @@ export default function Page() {
             width={24}
           />
           <div>SC2</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="WOW"
             height={24}
@@ -185,8 +185,8 @@ export default function Page() {
             width={24}
           />
           <div>WOW</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="Dota2"
             height={24}
@@ -196,8 +196,8 @@ export default function Page() {
             width={24}
           />
           <div>Dota2</div>
-        </div>
-        <div style={liststyle}>
+        </ImgListItem>
+        <ImgListItem>
           <Image
             alt="All"
             height={24}
@@ -207,7 +207,7 @@ export default function Page() {
             width={24}
           />
           <div>All Esports</div>
-        </div>
+        </ImgListItem>
       </div>
     </div>
   );
