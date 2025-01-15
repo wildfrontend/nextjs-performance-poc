@@ -27,6 +27,7 @@
     "@builder.io/partytown": "^0.10.3",
     "@eslint/eslintrc": "^3",
     "@svgr/webpack": "^8.1.0",
+    "@tailwindcss/typography": "^0.5.16",
     "@trivago/prettier-plugin-sort-imports": "^5.2.1",
     "@types/google-publisher-tag": "^1.20241202.0",
     "@types/node": "^20",
