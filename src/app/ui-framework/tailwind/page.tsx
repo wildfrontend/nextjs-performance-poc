@@ -1,5 +1,5 @@
 import MainLayout from '@/components/ui-framework/tailwindcss/layouts/main';
-import '@/styles/globals.css';
+import '@/styles/tailwind.css';
 
 const Page: React.FC = () => {
   return (
