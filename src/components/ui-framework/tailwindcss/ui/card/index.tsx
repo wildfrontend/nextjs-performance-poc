@@ -1,8 +1,8 @@
 import React from 'react';
 
 import BasicCard from './basic';
-import SideImageCard from './side-image';
 import ResponsiveCard from './responsive';
+import SideImageCard from './side-image';
 
 const CardExample: React.FC = () => {
   return (
@@ -14,4 +14,4 @@ const CardExample: React.FC = () => {
   );
 };
 
-export default CardExample
+export default CardExample;

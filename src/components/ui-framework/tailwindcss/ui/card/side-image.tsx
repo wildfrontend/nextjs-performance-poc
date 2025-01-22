@@ -1,12 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 const SideImageCard: React.FC = () => {
   return (
     <div className="card card-side bg-base-100 shadow-xl">
       <figure>
         <img
+          alt="Movie"
           src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-          alt="Movie" />
+        />
       </figure>
       <div className="card-body">
         <h2 className="card-title">New movie is released!</h2>
@@ -16,7 +17,7 @@ const SideImageCard: React.FC = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SideImageCard
+export default SideImageCard;
