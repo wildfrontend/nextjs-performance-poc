@@ -8,7 +8,6 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       data-theme="light"
-      className="prose"
     >
       <body>{children}</body>
     </html>
