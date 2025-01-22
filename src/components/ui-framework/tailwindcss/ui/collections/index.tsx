@@ -1,6 +1,7 @@
 import ButtonsExample from '../buttons';
 import DropdownExample from '../dropdown';
 import ModalsExample from '../modal';
+import SwitchExample from '../switch';
 
 const componentSamples = [
   {
@@ -20,6 +21,12 @@ const componentSamples = [
     title: 'Modal',
     component: <ModalsExample />,
     docs: 'https://daisyui.com/components/modal/',
+  },
+  {
+    id: 'switch',
+    title: 'Switch',
+    component: <SwitchExample />,
+    docs: 'https://daisyui.com/components/swap/',
   },
 ];
 
