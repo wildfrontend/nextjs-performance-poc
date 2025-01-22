@@ -3,12 +3,12 @@ import React from 'react';
 const BasicDropdown: React.FC = () => {
   return (
     <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn m-1">
+      <div className="btn m-1" role="button" tabIndex={0}>
         Click
       </div>
       <ul
-        tabIndex={0}
         className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+        tabIndex={0}
       >
         <li>
           <a>Item 1</a>
@@ -21,4 +21,4 @@ const BasicDropdown: React.FC = () => {
   );
 };
 
-export default BasicDropdown
+export default BasicDropdown;

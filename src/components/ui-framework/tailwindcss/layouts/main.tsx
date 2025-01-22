@@ -10,16 +10,16 @@ const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
         <div className="flex-none">
           <button className="btn btn-square btn-ghost">
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              className="inline-block h-5 w-5 stroke-current"
               fill="none"
               viewBox="0 0 24 24"
-              className="inline-block h-5 w-5 stroke-current"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
+                d="M4 6h16M4 12h16M4 18h16"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
               ></path>
             </svg>
           </button>
@@ -29,13 +29,13 @@ const MainLayout: React.FC<PropsWithChildren> = ({ children }) => {
         </div>
         <div className="flex-none">
           <label className="btn btn-ghost swap swap-rotate">
-            <input type="checkbox" className="theme-controller" value="dark" />
+            <input className="theme-controller" type="checkbox" value="dark" />
             <SunIcon className="swap-off h-6 w-6 fill-current" />
             <MoonIcon className="swap-on h-6 w-6 fill-current" />
           </label>
         </div>
       </div>
-      <div className="container px-6 py-16 mx-auto min-h-screen">
+      <div className="w-[1024px] px-6 py-16 mx-auto min-h-screen">
         {children}
       </div>
     </>

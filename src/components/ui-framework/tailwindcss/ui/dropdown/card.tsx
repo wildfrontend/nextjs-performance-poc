@@ -3,12 +3,12 @@ import React from 'react';
 const CardDropdown: React.FC = () => {
   return (
     <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn m-1">
+      <div className="btn m-1" role="button" tabIndex={0}>
         Click
       </div>
       <div
-        tabIndex={0}
         className="dropdown-content card card-compact bg-primary text-primary-content z-[1] w-64 p-2 shadow"
+        tabIndex={0}
       >
         <div className="card-body">
           <h3 className="card-title">Card title!</h3>
