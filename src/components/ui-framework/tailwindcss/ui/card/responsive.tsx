@@ -1,12 +1,16 @@
+import Image from 'next/image';
 import React from 'react';
 
 const ResponsiveCard: React.FC = () => {
   return (
     <div className="card lg:card-side bg-base-100 shadow-xl">
       <figure>
-        <img
+        <Image
           alt="Album"
+          height={300} // Adjust based on the aspect ratio
           src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+          unoptimized
+          width={400} // Adjust as needed for the design
         />
       </figure>
       <div className="card-body">

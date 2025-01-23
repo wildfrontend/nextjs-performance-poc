@@ -9,7 +9,7 @@ const SelectTable: React.FC = () => {
           <tr>
             <th>
               <label>
-                <input type="checkbox" className="checkbox" />
+                <input className="checkbox" type="checkbox" />
               </label>
             </th>
             <th>Name</th>
@@ -23,7 +23,7 @@ const SelectTable: React.FC = () => {
           <tr>
             <th>
               <label>
-                <input type="checkbox" className="checkbox" />
+                <input className="checkbox" type="checkbox" />
               </label>
             </th>
             <td>
@@ -31,8 +31,9 @@ const SelectTable: React.FC = () => {
                 <div className="avatar">
                   <div className="mask mask-squircle h-12 w-12">
                     <img
+                      alt="Avatar Tailwind CSS Component"
                       src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                      alt="Avatar Tailwind CSS Component" />
+                    />
                   </div>
                 </div>
                 <div>
@@ -44,7 +45,9 @@ const SelectTable: React.FC = () => {
             <td>
               Zemlak, Daniel and Leannon
               <br />
-              <span className="badge badge-ghost badge-sm">Desktop Support Technician</span>
+              <span className="badge badge-ghost badge-sm">
+                Desktop Support Technician
+              </span>
             </td>
             <td>Purple</td>
             <th>
@@ -55,7 +58,7 @@ const SelectTable: React.FC = () => {
           <tr>
             <th>
               <label>
-                <input type="checkbox" className="checkbox" />
+                <input className="checkbox" type="checkbox" />
               </label>
             </th>
             <td>
@@ -63,8 +66,9 @@ const SelectTable: React.FC = () => {
                 <div className="avatar">
                   <div className="mask mask-squircle h-12 w-12">
                     <img
+                      alt="Avatar Tailwind CSS Component"
                       src="https://img.daisyui.com/images/profile/demo/3@94.webp"
-                      alt="Avatar Tailwind CSS Component" />
+                    />
                   </div>
                 </div>
                 <div>
@@ -87,7 +91,7 @@ const SelectTable: React.FC = () => {
           <tr>
             <th>
               <label>
-                <input type="checkbox" className="checkbox" />
+                <input className="checkbox" type="checkbox" />
               </label>
             </th>
             <td>
@@ -95,8 +99,9 @@ const SelectTable: React.FC = () => {
                 <div className="avatar">
                   <div className="mask mask-squircle h-12 w-12">
                     <img
+                      alt="Avatar Tailwind CSS Component"
                       src="https://img.daisyui.com/images/profile/demo/4@94.webp"
-                      alt="Avatar Tailwind CSS Component" />
+                    />
                   </div>
                 </div>
                 <div>
@@ -108,7 +113,9 @@ const SelectTable: React.FC = () => {
             <td>
               Rowe-Schoen
               <br />
-              <span className="badge badge-ghost badge-sm">Office Assistant I</span>
+              <span className="badge badge-ghost badge-sm">
+                Office Assistant I
+              </span>
             </td>
             <td>Crimson</td>
             <th>
@@ -119,7 +126,7 @@ const SelectTable: React.FC = () => {
           <tr>
             <th>
               <label>
-                <input type="checkbox" className="checkbox" />
+                <input className="checkbox" type="checkbox" />
               </label>
             </th>
             <td>
@@ -127,8 +134,9 @@ const SelectTable: React.FC = () => {
                 <div className="avatar">
                   <div className="mask mask-squircle h-12 w-12">
                     <img
+                      alt="Avatar Tailwind CSS Component"
                       src="https://img.daisyui.com/images/profile/demo/5@94.webp"
-                      alt="Avatar Tailwind CSS Component" />
+                    />
                   </div>
                 </div>
                 <div>
@@ -140,7 +148,9 @@ const SelectTable: React.FC = () => {
             <td>
               Wyman-Ledner
               <br />
-              <span className="badge badge-ghost badge-sm">Community Outreach Specialist</span>
+              <span className="badge badge-ghost badge-sm">
+                Community Outreach Specialist
+              </span>
             </td>
             <td>Indigo</td>
             <th>

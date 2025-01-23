@@ -1,3 +1,4 @@
+import { hostname } from "os";
 
 const nextConfig = {
   /* config options here */
@@ -44,6 +45,9 @@ const nextConfig = {
       {
         hostname: 'static-cdn.jtvnw.net',
       },
+      {
+        hostname: 'img.daisyui.com'
+      }
     ],
   },
   experimental: {
