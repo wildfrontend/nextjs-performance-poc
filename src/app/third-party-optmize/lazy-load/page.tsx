@@ -29,7 +29,7 @@ const slots: { adUnit: string; size: googletag.GeneralSize; divId: string }[] =
 const item = articles[0];
 
 export default function Page() {
-  console.log('partytown');
+  console.log('lazy-load');
   return (
     <div>
       <InitGPT strategy="lazyOnload" />

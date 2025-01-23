@@ -12,7 +12,6 @@ const DefineAdSlot: React.FC<{
   divId: string;
 }> = ({ adUnit, size, divId }) => {
   useEffect(() => {
-    console.log({ googletag });
     if (window.googletag) {
       // Register the slot with GPT when the component is loaded.
       window.googletag.cmd.push(() => {
