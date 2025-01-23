@@ -20,6 +20,7 @@ const BasicCountdown: React.FC<{ defaultValue?: number }> = ({
 
   return (
     <span className="countdown font-mono text-6xl">
+      {/* @ts-ignore */}
       <span style={{ '--value': count }}></span>
     </span>
   );
