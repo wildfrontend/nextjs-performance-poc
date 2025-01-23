@@ -47,4 +47,4 @@ const IndicatorCarousel: React.FC = () => {
   );
 };
 
-export default IndicatorCarousel
+export default IndicatorCarousel;
