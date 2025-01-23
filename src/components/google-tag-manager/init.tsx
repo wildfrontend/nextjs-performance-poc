@@ -3,8 +3,8 @@
 import Script, { ScriptProps } from 'next/script';
 
 if (typeof window !== 'undefined') {
-  window.googletag = window.googletag || { cmd: [] };
-  googletag.cmd.push(() => {
+  window.googletag = window?.googletag || { cmd: [] };
+  window.googletag.cmd.push(() => {
     googletag.pubads().enableSingleRequest();
     googletag.enableServices();
   });
