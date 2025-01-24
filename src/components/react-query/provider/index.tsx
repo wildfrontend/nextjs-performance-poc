@@ -1,6 +1,7 @@
 'use client';
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { getQueryClient } from '@/utils/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import React, { PropsWithChildren } from 'react';
 
@@ -12,16 +13,7 @@ import React, { PropsWithChildren } from 'react';
 // Besides being bad for performance, this also leaks any sensitive data.
 
 const ReactQueryProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [queryClient] = React.useState(
-    () =>
-      new QueryClient({
-        defaultOptions: {
-          queries: {
-            staleTime: 5 * 1000,
-          },
-        },
-      })
-  );
+  const queryClient = getQueryClient()
   return (
     <QueryClientProvider client={queryClient}>
       {children}

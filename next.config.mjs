@@ -53,6 +53,11 @@ const nextConfig = {
   experimental: {
     nextScriptWorkers: true,
   },
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
 };
 
 export default nextConfig;
