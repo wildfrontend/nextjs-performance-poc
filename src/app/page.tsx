@@ -100,6 +100,23 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      {/* ANCHOR fetch ssr */}
+      <div>
+        <h2>React-Query</h2>
+        <div
+          style={{
+            display: 'flex',
+            gap: '16px',
+          }}
+        >
+          <Link href="/react-query/client" prefetch={false}>
+            React-Query Client
+          </Link>
+          <Link href="/react-query/prefetch" prefetch={false}>
+            React-Query Prefetch
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
