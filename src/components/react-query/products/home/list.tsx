@@ -9,7 +9,7 @@ const ProductList: React.FC = () => {
   const { urlSearchParams } = useQueryParams();
   const { data, isFetching, error } = useFetchProducts({
     params: {
-      limit: urlSearchParams.get('limit') ?? undefined,
+      limit: urlSearchParams.get('limit') ?? 6,
     },
   });
   if (isFetching) {
@@ -32,6 +32,7 @@ const ProductList: React.FC = () => {
                 alt="Shoes"
                 height={300}
                 src={item.thumbnail}
+                unoptimized
                 width={300}
               />
             </figure>

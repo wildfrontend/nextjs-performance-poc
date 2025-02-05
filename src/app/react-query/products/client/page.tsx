@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ProductCategory from '@/components/react-query/products/navigation/category';
 import ProductList from '@/components/react-query/products/home/list';
+import ProductCategory from '@/components/react-query/products/navigation/category';
 
 const Page: React.FC = () => {
   console.log('client');
