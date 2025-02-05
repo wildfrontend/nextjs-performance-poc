@@ -111,11 +111,8 @@ export default function Home() {
             gap: '16px',
           }}
         >
-          <Link href="/react-query/products/client" prefetch={false}>
+          <Link href="/react-query/products" prefetch={false}>
             React-Query Client - Products
-          </Link>
-          <Link href="/react-query/products/prefetch" prefetch={false}>
-            React-Query Prefetch - Products
           </Link>
         </div>
       </div>

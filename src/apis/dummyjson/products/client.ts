@@ -1,4 +1,4 @@
-import { useQuery } from '@tanstack/react-query';
+import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
 
 import { GetProductsQueryParams } from '@/types/apis/products';
 
@@ -12,7 +12,7 @@ import {
 export const useFetchProducts = (props?: {
   params?: GetProductsQueryParams;
 }) => {
-  const query = useQuery(getProductsOptions(props?.params));
+  const query = useInfiniteQuery(getProductsOptions(props?.params));
   console.log(props);
   return query;
 };

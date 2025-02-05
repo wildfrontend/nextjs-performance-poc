@@ -1,15 +1,28 @@
-import { queryOptions } from '@tanstack/react-query';
+import { infiniteQueryOptions, queryOptions } from '@tanstack/react-query';
 
 import { GetProductsQueryParams } from '@/types/apis/products';
 import axios from '@/utils/axios';
 
 export const getProductsOptions = (params?: GetProductsQueryParams) =>
-  queryOptions({
+  infiniteQueryOptions({
     queryKey: ['products', params],
-    queryFn: async ({ signal }) => {
-      console.log('products,');
-      const response = await axios.get('/products', { params, signal });
+    queryFn: async ({ pageParam, signal }) => {
+      console.log('products,', { pageParam });
+      const response = await axios.get('/products', {
+        params: { limit: 6, skip: pageParam },
+        signal,
+      });
       return response.data;
+    },
+    initialPageParam: 0,
+    getPreviousPageParam: (firstPage) => {
+      const value = firstPage.skip - 1;
+      return value < 0 ? 0 : value;
+    },
+    getNextPageParam: (lastPage) => {
+      const totalPage = Math.ceil(lastPage.total / lastPage.limit);
+      const value = lastPage.skip + 1;
+      return value < totalPage ? value : totalPage;
     },
   });
 
