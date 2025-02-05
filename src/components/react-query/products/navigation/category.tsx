@@ -14,7 +14,7 @@ const ProductCategory: React.FC = async () => {
           return (
             <li key={item.id}>
               <Link
-                href={compile('/react-query/categories/:category')({
+                href={compile('/react-query/products/categories/:category')({
                   category: item.slug,
                 })}
               >

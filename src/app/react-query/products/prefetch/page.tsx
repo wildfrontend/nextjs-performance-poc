@@ -2,8 +2,8 @@ import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 import React from 'react';
 
 import { getProductsOptions } from '@/apis/dummyjson/products/query-options';
-import ProductCategory from '@/components/react-query/products/category';
-import ProductList from '@/components/react-query/products/list';
+import ProductCategory from '@/components/react-query/products/navigation/category';
+import ProductList from '@/components/react-query/products/home/list';
 import { getQueryClient } from '@/utils/react-query';
 
 // https://nextjs.org/docs/messages/sync-dynamic-apis

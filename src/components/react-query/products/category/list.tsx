@@ -24,14 +24,17 @@ const CategoryProductList: React.FC = () => {
   if (data?.data?.length === 0) {
     return <div>Empty</div>;
   }
+  let preloadImg = 0
   return (
     <div className="grid grid-cols-3 gap-4">
       {/* @ts-ignore */}
       {data?.products.map((item, i) => {
+        preloadImg++
         return (
           <div className="card bg-base-100 w-96 shadow-xl" key={item.id}>
             <figure>
               <Image
+                loading={preloadImg <= 3 ? "eager" : "lazy"}
                 alt="Shoes"
                 height={300}
                 src={item.thumbnail}
