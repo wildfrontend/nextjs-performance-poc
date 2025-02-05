@@ -1,13 +1,16 @@
 'use client';
 
 import Image from 'next/image';
+import { useParams } from 'next/navigation';
 
-import { useFetchProducts } from '@/apis/dummyjson/products/client';
+import { useFetchProductsByCategory } from '@/apis/dummyjson/products/client';
 import useQueryParams from '@/hooks/query-params';
 
-const ProductList: React.FC = () => {
+const CategoryProductList: React.FC = () => {
+  const params = useParams<{ category: string }>();
   const { urlSearchParams } = useQueryParams();
-  const { data, isFetching, error } = useFetchProducts({
+  const { data, isFetching, error } = useFetchProductsByCategory({
+    category: params.category,
     params: {
       limit: urlSearchParams.get('limit') ?? undefined,
     },
@@ -49,4 +52,4 @@ const ProductList: React.FC = () => {
   );
 };
 
-export default ProductList;
+export default CategoryProductList;

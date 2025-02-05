@@ -13,6 +13,22 @@ export const getProductsOptions = (params?: GetProductsQueryParams) =>
     },
   });
 
+export const getProductsByCategoryOptions = (
+  category: string,
+  params?: GetProductsQueryParams
+) =>
+  queryOptions({
+    queryKey: ['products', category, params],
+    queryFn: async ({ signal }) => {
+      console.log('products,', category);
+      const response = await axios.get(`/products/category/${category}`, {
+        params,
+        signal,
+      });
+      return response.data;
+    },
+  });
+
 export const getProductCategoriesOptions = () =>
   queryOptions({
     queryKey: ['products', 'categories'],

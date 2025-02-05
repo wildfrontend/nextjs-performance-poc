@@ -1,6 +1,6 @@
+import Link from 'next/link';
+import { compile } from 'path-to-regexp';
 import React from 'react';
-
-import CategoryItem from './item';
 
 const ProductCategory: React.FC = async () => {
   try {
@@ -11,7 +11,17 @@ const ProductCategory: React.FC = async () => {
       <ul className="menu menu-horizontal bg-base-200">
         {/* @ts-ignore */}
         {categories.map((item) => {
-          return <CategoryItem key={item.slug} item={item} />;
+          return (
+            <li key={item.id}>
+              <Link
+                href={compile('/react-query/categories/:category')({
+                  category: item.slug,
+                })}
+              >
+                {item.name}
+              </Link>
+            </li>
+          );
         })}
       </ul>
     );
