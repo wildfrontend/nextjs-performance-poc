@@ -1,9 +1,10 @@
 'use client';
 
-import { getQueryClient } from '@/utils/react-query';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import React, { PropsWithChildren } from 'react';
+
+import { getQueryClient } from '@/utils/react-query';
 
 // NEVER DO THIS:
 // const queryClient = new QueryClient()
@@ -13,7 +14,7 @@ import React, { PropsWithChildren } from 'react';
 // Besides being bad for performance, this also leaks any sensitive data.
 
 const ReactQueryProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const queryClient = getQueryClient()
+  const queryClient = getQueryClient();
   return (
     <QueryClientProvider client={queryClient}>
       {children}

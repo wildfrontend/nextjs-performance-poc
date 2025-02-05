@@ -3,4 +3,3 @@ export type GetProductsQueryParams = UrlQueryParams<{
   skip: number;
   category: string;
 }>;
-
