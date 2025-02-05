@@ -22,7 +22,7 @@ const ProductList: React.FC = () => {
     return <div>{JSON.stringify(error, null, 4)}</div>;
   }
   return (
-    <div className="grid grid-cols-3 gap-4 py-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {data?.pages?.map((group, i) => {
         // @ts-ignore
         return group.products.map((item) => {
