@@ -1,4 +1,5 @@
-"use client"
+'use client';
+
 import { DevTool } from '@hookform/devtools';
 import { Button, Card, Space, Tabs, TabsProps, notification } from 'antd';
 import dayjs from 'dayjs';
@@ -19,6 +20,7 @@ import {
 
 import { ArticleFormValues } from '@/types/pages/articles';
 
+import LoadPreviousButton from '../fields/load-previous';
 import ContentForm from './content';
 import ExtraForm from './extra';
 import SettingsForm from './settings';
@@ -67,8 +69,6 @@ const settingsFormKeys: ArticleFormKey[] = [
 const settingsFormRequiredKeys: ArticleFormKey[] = [
   'localeId',
   'siteSectionIds',
-
-  'timeSpent',
 ];
 
 const extraFormKey: ArticleFormKey[] = ['quickpoll'];
@@ -269,7 +269,8 @@ const ArticleForm: React.FC<ArticleCreateFormProps | ArticleEditFormProps> = ({
     } else {
       methods.handleSubmit(async (data) => {
         try {
-          console.log('create success', data);
+          methods.removePreviousValues();
+          methods.reset();
           api.open({
             message: 'Create article success',
             description:
@@ -277,7 +278,6 @@ const ArticleForm: React.FC<ArticleCreateFormProps | ArticleEditFormProps> = ({
             showProgress: true,
             type: 'success',
           });
-          methods.removePreviousValues();
           onSuccess?.();
         } catch (error) {
           api.open({
@@ -291,7 +291,7 @@ const ArticleForm: React.FC<ArticleCreateFormProps | ArticleEditFormProps> = ({
         }
       })();
     }
-  }, [methods, initialValues?.id, formMode, onSuccess, onError]);
+  }, [methods, formMode, onSuccess, onError]);
 
   return (
     <FormProvider {...methods}>
@@ -304,21 +304,17 @@ const ArticleForm: React.FC<ArticleCreateFormProps | ArticleEditFormProps> = ({
             setTab(activeKey);
           }}
           tabBarExtraContent={
-            <div className="relative">
-              {formMode === ArticleFormMode.create && (
-                <div className="absolute -top-[40px] mb-2"></div>
-              )}
-              <Space wrap>
-                <Button
-                  loading={methods.formState.isSubmitting}
-                  onClick={onSubmit}
-                  type="primary"
-                >
-                  Save & Close
-                </Button>
-                <Button onClick={onCancel}>Cancel</Button>
-              </Space>
-            </div>
+            <Space wrap>
+              {formMode === ArticleFormMode.create && <LoadPreviousButton />}
+              <Button
+                loading={methods.formState.isSubmitting}
+                onClick={onSubmit}
+                type="primary"
+              >
+                Save & Close
+              </Button>
+              <Button onClick={onCancel}>Cancel</Button>
+            </Space>
           }
         />
       </Card>
