@@ -5,7 +5,7 @@ export interface ArticleBasicEdit {
   content: string;
   headlineImgFile?: Blob;
   headlineImageText?: string;
-  tournamentIds?: number[];
+  playerIds?: number[];
   timeSpent: number;
   quickpoll?: {
     question: string;

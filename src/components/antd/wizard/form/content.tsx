@@ -1,4 +1,4 @@
-import { Col, Form, Input, Row, Space, Typography } from 'antd';
+import { Form, Input, Space, Typography } from 'antd';
 import React from 'react';
 import { Controller } from 'react-hook-form';
 
@@ -116,7 +116,7 @@ const ContentForm: React.FC = () => {
               required={
                 isEdit
                   ? !!initialValues?.headlineImgPreview ||
-                  !!watch()?.headlineImgFile
+                    !!watch()?.headlineImgFile
                   : !!watch()?.headlineImgFile
               }
               validateStatus={error && 'error'}
@@ -129,7 +129,7 @@ const ContentForm: React.FC = () => {
           required: {
             value: isEdit
               ? !!initialValues?.headlineImgPreview ||
-              !!watch()?.headlineImgFile
+                !!watch()?.headlineImgFile
               : !!watch()?.headlineImgFile,
             message: 'Please input headline image alt',
           },

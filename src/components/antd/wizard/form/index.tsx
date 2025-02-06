@@ -67,10 +67,11 @@ const settingsFormKeys: ArticleFormKey[] = [
 const settingsFormRequiredKeys: ArticleFormKey[] = [
   'localeId',
   'siteSectionIds',
+
   'timeSpent',
 ];
 
-const extraFormKey: ArticleFormKey[] = ['tournamentIds', 'quickpoll'];
+const extraFormKey: ArticleFormKey[] = ['quickpoll'];
 
 const formatFormValues = (
   initialValues?: Partial<ArticleFormValues>
