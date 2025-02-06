@@ -116,6 +116,20 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      {/* ANCHOR ANTD  */}
+      <div>
+        <h2>Ant-Design</h2>
+        <div
+          style={{
+            display: 'flex',
+            gap: '16px',
+          }}
+        >
+          <Link href="/antd" prefetch={false}>
+            Antd - Dashboard
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

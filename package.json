@@ -10,6 +10,10 @@
     "prettier": "npx prettier --write ./src & eslint --fix ./src"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.6.0",
+    "@ant-design/nextjs-registry": "^1.0.2",
+    "@ant-design/v5-patch-for-react-19": "^1.0.3",
+    "@ckeditor/ckeditor5-react": "^9.4.0",
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -20,16 +24,25 @@
     "@next/third-parties": "^15.1.4",
     "@tanstack/react-query": "^5.64.2",
     "@tanstack/react-query-devtools": "^5.64.2",
+    "antd": "^5.23.4",
     "axios": "^1.7.9",
+    "ckeditor5": "^44.1.0",
     "clsx": "^2.1.1",
+    "compressorjs": "^1.2.1",
+    "cropperjs": "^1.6.2",
+    "dayjs": "^1.11.13",
     "next": "15.1.2",
     "path-to-regexp": "^8.2.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-cropper": "^2.3.3",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.2",
+    "upload-images-converter": "^2.0.2"
   },
   "devDependencies": {
     "@builder.io/partytown": "^0.10.3",
     "@eslint/eslintrc": "^3",
+    "@hookform/devtools": "^4.3.3",
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/typography": "^0.5.16",
     "@trivago/prettier-plugin-sort-imports": "^5.2.1",
