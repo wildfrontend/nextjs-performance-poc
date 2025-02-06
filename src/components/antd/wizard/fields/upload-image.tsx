@@ -1,5 +1,5 @@
 import { DeleteOutlined, UploadOutlined } from '@ant-design/icons';
-import { Button, Image, Modal, Space, Upload } from 'antd';
+import { Button, Image, Modal, Space, Typography, Upload } from 'antd';
 import { RcFile, UploadFile } from 'antd/es/upload';
 import Compressor from 'compressorjs';
 import Cropper from 'cropperjs';
@@ -109,11 +109,11 @@ const PreDisplayImage: React.FC<{
   onDeleteImage: () => void;
   isDeleteable?: boolean;
   previewSize:
-    | {
-        width: number;
-        height: number;
-      }
-    | undefined;
+  | {
+    width: number;
+    height: number;
+  }
+  | undefined;
 }> = ({ preview, onDeleteImage, isDeleteable, previewSize }) => {
   return (
     <Space>
@@ -204,7 +204,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   };
 
   return (
-    <div>
+    <Space direction="vertical">
       <UploadCropper
         cropper={cropper}
         cropperImg={cropperImg}
@@ -272,19 +272,20 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         disabled={disabled}
         itemRender={(originNode, file, fileList, action) => {
           return (
-            <Space>
+            <Space style={{ padding: "8px 0px" }}>
               <Image
                 className="object-contain"
-                height={previewSize?.height ?? 337}
+                height={previewSize?.height ?? 45}
                 src={
                   result.current &&
                   URL.createObjectURL(result.current as Blob | MediaSource)
                 }
-                width={previewSize?.width ?? 600}
+                width={previewSize?.width ?? 80}
               />
-
+              <Typography.Text>{file.name}</Typography.Text>
               <Button
                 danger
+                size="small"
                 icon={<DeleteOutlined />}
                 onClick={() => {
                   action.remove();
@@ -293,8 +294,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                   }, 200);
                 }}
                 shape="circle"
-                type="primary"
-              ></Button>
+              />
             </Space>
           );
         }}
@@ -327,7 +327,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
           previewSize={previewSize}
         />
       )}
-    </div>
+    </Space>
   );
 };
 
