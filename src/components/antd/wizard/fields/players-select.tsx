@@ -57,20 +57,20 @@ const PlayersSelect: React.FC<{
       });
     };
     return debounce(loadOptions, 500);
-  }, [])
+  }, []);
 
   return (
     <Select
-      labelInValue
       filterOption={false}
-      onSearch={debounceFetcher}
-      notFoundContent={fetching ? <Spin size="small" /> : null}
+      labelInValue
       mode="multiple"
-      value={value}
-      placeholder="Select users"
+      notFoundContent={fetching ? <Spin size="small" /> : null}
       onChange={onChange}
-      style={{ width: '100%' }}
+      onSearch={debounceFetcher}
       options={options}
+      placeholder="Select users"
+      style={{ width: '100%' }}
+      value={value}
     />
   );
 };

@@ -49,15 +49,15 @@ const SiteSectionsSelect: React.FC<{
       mode="multiple"
       onChange={onChange}
       optionFilterProp="children"
-      placeholder="Please select site sections"
-      style={{ width: '100%' }}
-      value={value}
       options={sections.map((item) => {
         return {
           label: item.name,
           value: item.id,
         };
       })}
+      placeholder="Please select site sections"
+      style={{ width: '100%' }}
+      value={value}
     />
   );
 };

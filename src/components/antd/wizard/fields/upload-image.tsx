@@ -109,11 +109,11 @@ const PreDisplayImage: React.FC<{
   onDeleteImage: () => void;
   isDeleteable?: boolean;
   previewSize:
-  | {
-    width: number;
-    height: number;
-  }
-  | undefined;
+    | {
+        width: number;
+        height: number;
+      }
+    | undefined;
 }> = ({ preview, onDeleteImage, isDeleteable, previewSize }) => {
   return (
     <Space>
@@ -272,7 +272,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         disabled={disabled}
         itemRender={(originNode, file, fileList, action) => {
           return (
-            <Space style={{ padding: "8px 0px" }}>
+            <Space style={{ padding: '8px 0px' }}>
               <Image
                 className="object-contain"
                 height={previewSize?.height ?? 45}
@@ -285,7 +285,6 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
               <Typography.Text>{file.name}</Typography.Text>
               <Button
                 danger
-                size="small"
                 icon={<DeleteOutlined />}
                 onClick={() => {
                   action.remove();
@@ -294,6 +293,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                   }, 200);
                 }}
                 shape="circle"
+                size="small"
               />
             </Space>
           );

@@ -1,7 +1,6 @@
 import { Select } from 'antd';
 import 'cropperjs/dist/cropper.min.css';
 import React from 'react';
-import { ControllerRenderProps } from 'react-hook-form';
 
 export const emptyLocaleId = -1;
 /**
@@ -41,14 +40,14 @@ const LocaleSelect: React.FC<{
 }> = ({ onChange, value, disabled }) => {
   return (
     <Select
+      disabled={disabled}
+      onChange={onChange}
       options={options.map((item) => {
         return {
           label: item.name,
           value: item.id,
         };
       })}
-      disabled={disabled}
-      onChange={onChange}
       placeholder="Please select"
       value={value === emptyLocaleId ? null : value}
     />

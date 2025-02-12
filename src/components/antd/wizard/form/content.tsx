@@ -1,10 +1,12 @@
 import { Form, Input, Space, Typography } from 'antd';
+import dynamic from 'next/dynamic';
 import React from 'react';
 import { Controller } from 'react-hook-form';
 
 import { useArticleFormContext } from '.';
-import Editor from '../fields/ckeditor';
 import ImageUpload from '../fields/upload-image';
+
+const Editor = dynamic(() => import('../fields/ckeditor'), { ssr: false });
 
 const ContentForm: React.FC = () => {
   const {
