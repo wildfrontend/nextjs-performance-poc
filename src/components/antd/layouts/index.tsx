@@ -5,6 +5,7 @@ import {
   DashboardOutlined,
   DesktopOutlined,
   PieChartOutlined,
+  UnorderedListOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, MenuProps } from 'antd';
 import { Typography } from 'antd';
@@ -33,7 +34,15 @@ const items: MenuItem[] = [
       </Link>
     ),
   },
-  { key: '2', icon: <DesktopOutlined />, label: 'Option 2' },
+  {
+    key: '2',
+    icon: <UnorderedListOutlined />,
+    label: (
+      <Link href="/antd/field-array">
+        <Typography.Text>Field Array</Typography.Text>
+      </Link>
+    ),
+  },
   { key: '3', icon: <ContainerOutlined />, label: 'Option 3' },
 ];
 
