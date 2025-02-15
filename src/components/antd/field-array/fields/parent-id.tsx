@@ -1,0 +1,43 @@
+import { Select, Tag } from 'antd';
+import { SelectProps } from 'antd/es/select';
+import React from 'react';
+
+const options = [
+  { label: 'P-0', value: 'p-0' },
+  { label: 'P-1', value: 'p-1' },
+  { label: 'P-2', value: 'p-2' },
+];
+
+type TagRender = SelectProps['tagRender'];
+
+const tagRender: TagRender = (props) => {
+  const { label, value, closable, onClose } = props;
+  const onPreventMouseDown = (event: React.MouseEvent<HTMLSpanElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+  };
+  return (
+    <Tag
+      color="blue"
+      onMouseDown={onPreventMouseDown}
+      closable={closable}
+      onClose={onClose}
+      style={{ marginInlineEnd: 4 }}
+    >
+      {label}
+    </Tag>
+  );
+};
+
+const ParentIdSelect: React.FC = ({}) => {
+  return (
+    <Select
+      tagRender={tagRender}
+      mode="multiple"
+      placeholder="Filter"
+      options={options}
+    />
+  );
+};
+
+export default ParentIdSelect;
