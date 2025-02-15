@@ -3,7 +3,6 @@
 import {
   ContainerOutlined,
   DashboardOutlined,
-  DesktopOutlined,
   PieChartOutlined,
   UnorderedListOutlined,
 } from '@ant-design/icons';

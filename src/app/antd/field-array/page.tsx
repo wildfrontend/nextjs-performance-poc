@@ -1,7 +1,8 @@
 'use client';
 
-import FieldArrayForm from '@/components/antd/field-array/form';
 import React from 'react';
+
+import FieldArrayForm from '@/components/antd/field-array/form';
 
 const Page: React.FC = () => {
   return (

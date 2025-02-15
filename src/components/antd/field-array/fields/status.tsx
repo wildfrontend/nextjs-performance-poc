@@ -27,10 +27,10 @@ const tagRender: TagRender = (props) => {
   };
   return (
     <Tag
-      color={tagColor[value]}
-      onMouseDown={onPreventMouseDown}
       closable={closable}
+      color={tagColor[value]}
       onClose={onClose}
+      onMouseDown={onPreventMouseDown}
       style={{ marginInlineEnd: 4 }}
     >
       {label}
@@ -38,7 +38,14 @@ const tagRender: TagRender = (props) => {
   );
 };
 const StatusSelects: React.FC = () => {
-  return <Select tagRender={tagRender} options={options} mode="multiple" />;
+  return (
+    <Select
+      mode="multiple"
+      options={options}
+      style={{ width: '100%' }}
+      tagRender={tagRender}
+    />
+  );
 };
 
-export default StatusSelects
+export default StatusSelects;

@@ -18,10 +18,10 @@ const tagRender: TagRender = (props) => {
   };
   return (
     <Tag
-      color="blue"
-      onMouseDown={onPreventMouseDown}
       closable={closable}
+      color="blue"
       onClose={onClose}
+      onMouseDown={onPreventMouseDown}
       style={{ marginInlineEnd: 4 }}
     >
       {label}
@@ -32,10 +32,11 @@ const tagRender: TagRender = (props) => {
 const ParentIdSelect: React.FC = ({}) => {
   return (
     <Select
-      tagRender={tagRender}
       mode="multiple"
-      placeholder="Filter"
       options={options}
+      placeholder="Filter"
+      style={{ width: '100%' }}
+      tagRender={tagRender}
     />
   );
 };
