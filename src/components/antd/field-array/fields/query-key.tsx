@@ -12,7 +12,9 @@ const options = [
 
 const QueryKeySelect: React.FC<{
   onChange: (value: QueryKey) => void;
-}> = ({ onChange }) => {
+  value?: QueryKey;
+  selectKeys?: (QueryKey | undefined)[];
+}> = ({ onChange, selectKeys }) => {
   return (
     <Select
       onChange={(value) => {
@@ -21,7 +23,7 @@ const QueryKeySelect: React.FC<{
       options={options.map((item) => {
         return {
           ...item,
-          // disabled: selectKeys?.some((select) => select === item.value),
+          disabled: selectKeys?.some((select) => select === item.value),
         };
       })}
       placeholder="Filter"

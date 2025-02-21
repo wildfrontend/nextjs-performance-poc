@@ -1,7 +1,7 @@
 import { InputNumber, Select } from 'antd';
 import React, { useEffect, useState } from 'react';
 
-import { Operator } from '../types/value';
+import { Operator, SizeField, SizeUnit } from '../types/value';
 
 const RangeSelect: React.FC<{
   onChange: (value: string) => void;
@@ -31,26 +31,31 @@ const UnitSelect: React.FC<{
         onChange(v);
       }}
       options={[
-        { label: 'MiB', value: 10 ** 6 },
-        { label: 'GiB', value: 10 ** 9 },
-        { label: 'TiB', value: 10 ** 12 },
-        { label: 'PiB', value: 10 ** 15 },
+        { label: 'MiB', value: SizeUnit.MiB }, // 1,048,576 Bytes
+        { label: 'GiB', value: SizeUnit.GiB }, // 1,073,741,824 Bytes
+        { label: 'TiB', value: SizeUnit.TiB }, // 1,099,511,627,776 Bytes
+        { label: 'PiB', value: SizeUnit.PiB }, // 1,125,899,906,842,624 Bytes
       ]}
-
       value={value}
     />
   );
 };
 
-const SizeInput: React.FC = () => {
-  const [unit, setUnit] = useState(1000_000);
+const SizeInput: React.FC<{
+  onChange: (...event: any[]) => void;
+  value: SizeField['value'];
+}> = ({ onChange, value }) => {
+  const [unit, setUnit] = useState(SizeUnit.MiB);
   const [operator, setOperator] = useState<string>(Operator.ge);
 
   const [size, setSize] = useState(0);
 
   useEffect(() => {
-    console.log(size * unit); //value
-  }, [unit, size]);
+    onChange({
+      operator,
+      value: size * unit,
+    });
+  }, [unit, size, operator]);
 
   return (
     <InputNumber
