@@ -1,14 +1,24 @@
 'use client';
 
-import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
-import { DevTool } from '@hookform/devtools';
-import { Button, Col, Form, Row, Select, Typography } from 'antd';
 import {
-  Controller,
-  FormProvider,
-  useFieldArray,
-  useForm,
-} from 'react-hook-form';
+  DeleteOutlined,
+  FilterOutlined,
+  PlusOutlined,
+} from '@ant-design/icons';
+import { DevTool } from '@hookform/devtools';
+import { Filter1Outlined } from '@mui/icons-material';
+import {
+  Button,
+  Col,
+  Divider,
+  Form,
+  Modal,
+  Row,
+  Select,
+  Typography,
+} from 'antd';
+import { JSX, useState } from 'react';
+import { Controller, useFieldArray, useForm } from 'react-hook-form';
 
 import ActiveSelect from '../fields/active';
 import ParentIdSelect from '../fields/parent-id';
@@ -17,163 +27,200 @@ import SizeInput from '../fields/size';
 import StatusSelects from '../fields/status';
 import {
   ActivatedField,
-  Operator,
   ParentIdField,
   QueryKey,
   SizeField,
   StatusField,
 } from '../types/value';
 
-type FormValues = {
-  filters: { key: QueryKey | undefined; value: any | undefined }[];
-};
+type FilterField =
+  | SizeField
+  | ActivatedField
+  | ParentIdField
+  | StatusField
+  | { key: QueryKey | undefined; value: any | undefined };
 
-export const useQueryForm = () => {
-  return useForm();
+type FormValues = {
+  filters: FilterField[];
 };
 
 const FieldArrayForm: React.FC = () => {
-  const { control, watch, setValue } = useForm<FormValues>({
-    defaultValues: {
-      filters: [{}],
-    },
-  });
+  const { control, watch, setValue, reset, handleSubmit } = useForm<FormValues>(
+    {
+      defaultValues: { filters: [{ key: undefined, value: undefined }] },
+    }
+  );
 
   const { fields, append, remove } = useFieldArray({
     control,
     name: 'filters',
   });
 
+  const filters = watch('filters');
+
+  const [isOpen, setOpen] = useState(false);
+
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+  });
+
   return (
-    <Form layout="vertical" style={{ maxWidth: '800px' }}>
-      <DevTool control={control} />
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-        {fields.map((field, index) => {
-          return (
-            <Row key={index} gutter={[4, 4]}>
-              <Col span={6}>
-                <Controller
-                  control={control}
-                  name={`filters.${index}.key`}
-                  render={({
-                    field: { onChange, value },
-                    fieldState: { error },
-                  }) => {
-                    const selectKeys = watch('filters')?.map(
-                      (item) => item.key
-                    );
-                    return (
-                      <Form.Item>
-                        <QueryKeySelect
-                          onChange={(value) => {
-                            onChange(value);
-                            setValue(`filters.${index}.value`, undefined);
-                          }}
-                          value={value}
-                          selectKeys={selectKeys}
-                        />
-                      </Form.Item>
-                    );
-                  }}
-                />
-              </Col>
-              <Col span={16}>
-                <Controller
-                  control={control}
-                  name={`filters.${index}.value`}
-                  render={({
-                    field: { onChange, value },
-                    fieldState: { error },
-                  }) => {
-                    switch (watch(`filters.${index}.key`)) {
-                      case QueryKey.size: {
-                        return (
-                          <SizeInput
-                            onChange={(value) => {
-                              onChange(value);
+    <>
+      <Button
+        onClick={() => {
+          setOpen(true);
+        }}
+        icon={<FilterOutlined />}
+      />
+      <Modal
+        closeIcon={false}
+        destroyOnClose
+        open={isOpen}
+        footer={[
+          <Button
+            onClick={() => {
+              reset();
+            }}
+          >
+            Clear all
+          </Button>,
+          <Button
+            onClick={() => {
+              reset();
+              setOpen(false);
+            }}
+          >
+            Cancel
+          </Button>,
+          <Button onClick={onSubmit} type="primary">
+            Confirm
+          </Button>,
+        ]}
+      >
+        <Form layout="vertical" style={{ padding: '8px' }}>
+          <DevTool control={control} />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            {fields.map((field, index) => {
+              const selectedKey = filters[index]?.key;
+              return (
+                <Row key={field.id} gutter={[4, 4]}>
+                  {/* Key Select */}
+                  <Col span={6}>
+                    <Controller
+                      control={control}
+                      name={`filters.${index}.key`}
+                      render={({
+                        field: { onChange, value },
+                        fieldState: { error },
+                      }) => (
+                        <Form.Item>
+                          <QueryKeySelect
+                            onChange={(newValue) => {
+                              onChange(newValue);
+                              setValue(`filters.${index}.value`, undefined);
                             }}
-                            value={value as SizeField['value']}
+                            value={value}
+                            selectKeys={filters.map((item) => item.key)}
                           />
-                        );
-                      }
-                      case QueryKey.activated: {
+                        </Form.Item>
+                      )}
+                    />
+                  </Col>
+                  {/* Dynamic Value Input */}
+                  <Col span={16}>
+                    <Controller
+                      control={control}
+                      name={`filters.${index}.value`}
+                      rules={{
+                        required: 'Please input value or remove field',
+                      }}
+                      render={({
+                        field: { onChange, value },
+                        fieldState: { error },
+                      }) => {
+                        const componentMap: Record<QueryKey, JSX.Element> = {
+                          [QueryKey.size]: (
+                            <SizeInput
+                              onChange={(val) => onChange(val)}
+                              value={value as SizeField['value']}
+                            />
+                          ),
+                          [QueryKey.activated]: (
+                            <ActiveSelect
+                              onChange={(val) => onChange(val)}
+                              value={value as ActivatedField['value']}
+                            />
+                          ),
+                          [QueryKey.parent_id]: (
+                            <ParentIdSelect
+                              onChange={(val) => onChange(val)}
+                              value={value as ParentIdField['value']}
+                            />
+                          ),
+                          [QueryKey.status]: (
+                            <StatusSelects
+                              onChange={(val) => onChange(val)}
+                              value={value as StatusField['value']}
+                            />
+                          ),
+                        };
                         return (
-                          <ActiveSelect
-                            onChange={(value) => {
-                              onChange(value);
-                            }}
-                            value={value as ActivatedField['value']}
-                          />
+                          <Form.Item
+                            help={error?.message}
+                            validateStatus={error && 'error'}
+                          >
+                            {componentMap[selectedKey!] || (
+                              <Select
+                                disabled
+                                placeholder="Select"
+                                style={{ width: '100%' }}
+                              />
+                            )}
+                          </Form.Item>
                         );
-                      }
-                      case QueryKey.parent_id: {
-                        return (
-                          <ParentIdSelect
-                            onChange={(value) => {
-                              onChange(value);
-                            }}
-                            value={value as ParentIdField['value']}
-                          />
-                        );
-                      }
-                      case QueryKey.status: {
-                        return (
-                          <StatusSelects
-                            onChange={(value) => {
-                              onChange(value);
-                            }}
-                            value={value as StatusField['value']}
-                          />
-                        );
-                      }
-                      default: {
-                        return (
-                          <Select
-                            disabled
-                            placeholder="Select"
-                            style={{ width: '100%' }}
-                          />
-                        );
-                      }
-                    }
-                  }}
-                />
-              </Col>
-              <Col span={2}>
+                      }}
+                    />
+                  </Col>
+
+                  {/* Remove Button */}
+                  <Col span={2}>
+                    <Button
+                      onClick={() => remove(index)}
+                      icon={<DeleteOutlined />}
+                      color="danger"
+                      type="text"
+                    />
+                  </Col>
+                </Row>
+              );
+            })}
+
+            {/* Add Filter Button */}
+            <Row>
+              <Col>
                 <Button
-                  onClick={() => {
-                    remove(index);
-                  }}
-                  icon={<DeleteOutlined />}
-                  color="danger"
-                  type="text"
-                />
+                  icon={<PlusOutlined />}
+                  type="link"
+                  hidden={filters.length >= Object.keys(QueryKey).length}
+                  onClick={() => append({ key: undefined, value: undefined })}
+                  block
+                >
+                  Add filter
+                </Button>
               </Col>
             </Row>
-          );
-        })}
-        <Row>
-          <Col>
-            <Button
-              icon={<PlusOutlined />}
-              type="link"
-              hidden={watch().filters.length >= Object.keys(QueryKey).length}
-              onClick={() => {
-                append({ key: undefined, value: undefined });
-              }}
-              block
-            >
-              Add filter
-            </Button>
-          </Col>
-        </Row>
-      </div>
-      <Form.Item noStyle>
-        <Typography>
-          <pre>{JSON.stringify(watch(), null, 2)}</pre>
-        </Typography>
-      </Form.Item>
-    </Form>
+          </div>
+
+          {/* Debugging Output */}
+          <Form.Item noStyle>
+            <Typography>
+              <pre>{JSON.stringify(filters, null, 2)}</pre>
+            </Typography>
+          </Form.Item>
+        </Form>
+        <Divider />
+      </Modal>
+    </>
   );
 };
 
