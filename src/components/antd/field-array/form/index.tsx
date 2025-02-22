@@ -32,11 +32,15 @@ import {
   SizeField,
   StatusField,
 } from '../types/value';
-import { getValidationRule } from '../utils/validate';
+import { formatFormValues, formatToQueryParams, getValidationRule, parseQueryParamsToFormValue } from '../utils/validate';
+import useQueryParams from '@/hooks/query-params';
 
 const FieldArrayForm: React.FC = () => {
   const [result, setResult] = useState<any>();
   const [isOpen, setOpen] = useState(false);
+
+  const { urlSearchParams, setQueryParams, removeQueryParams } =
+    useQueryParams();
 
   const { control, watch, setValue, reset, handleSubmit } =
     useForm<QueryFormValues>({
@@ -51,7 +55,9 @@ const FieldArrayForm: React.FC = () => {
   const filters = watch('filters');
 
   const onSubmit = handleSubmit((data) => {
-    setResult(data);
+    const result = formatFormValues(data);
+    setResult(result);
+    setQueryParams({ filters: formatToQueryParams(result.filters) });
   });
 
   return (
@@ -60,6 +66,14 @@ const FieldArrayForm: React.FC = () => {
         icon={<FilterOutlined />}
         onClick={() => {
           setOpen(true);
+          const defaultValue = urlSearchParams.get('filters')
+          if (defaultValue) {
+            setValue(
+              'filters',
+              parseQueryParamsToFormValue(defaultValue)
+            );
+          }
+
         }}
       />
       <Modal
@@ -71,6 +85,7 @@ const FieldArrayForm: React.FC = () => {
             onClick={() => {
               reset();
               setResult(undefined)
+              removeQueryParams('filters');
             }}
           >
             Clear all
@@ -78,6 +93,8 @@ const FieldArrayForm: React.FC = () => {
           <Button
             key="cancel"
             onClick={() => {
+              reset();
+              removeQueryParams('filters');
               setOpen(false);
             }}
           >

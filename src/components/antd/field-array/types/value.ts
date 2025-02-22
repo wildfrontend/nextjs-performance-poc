@@ -41,16 +41,10 @@ export type StatusField = {
   value: string[];
 };
 
-export type QueryField = {
-  key: string | undefined;
-  value:
-    | ActivatedField['value']
-    | ParentIdField['value']
-    | SizeField['value']
-    | StatusField['value']
-    | undefined;
-};
+export type QueryField = any;
 
 export type QueryFormValues = {
   filters: QueryField[];
 };
+
+export type ResultValues = Record<string, { operator: string; values: any[] }>;
