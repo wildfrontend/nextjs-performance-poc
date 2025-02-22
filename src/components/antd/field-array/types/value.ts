@@ -40,3 +40,11 @@ export type StatusField = {
   key: QueryKey.status;
   value: string[];
 };
+
+export type QueryField = any;
+
+export type QueryFormValues = {
+  filters: QueryField[];
+};
+
+export type ResultValues = Record<string, { operator: string; values: any[] }>;
