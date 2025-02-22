@@ -20,7 +20,7 @@ export enum SizeUnit {
 
 export type ActivatedField = {
   key: QueryKey.activated;
-  value: boolean;
+  value: string;
 };
 
 export type ParentIdField = {

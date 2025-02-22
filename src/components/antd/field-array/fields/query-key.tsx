@@ -14,7 +14,7 @@ const QueryKeySelect: React.FC<{
   onChange: (value: QueryKey) => void;
   value?: QueryKey;
   selectKeys?: (QueryKey | undefined)[];
-}> = ({ onChange, selectKeys }) => {
+}> = ({ onChange, selectKeys, value }) => {
   return (
     <Select
       onChange={(value) => {
@@ -28,6 +28,7 @@ const QueryKeySelect: React.FC<{
       })}
       placeholder="Filter"
       style={{ width: '100%' }}
+      value={value}
     />
   );
 };

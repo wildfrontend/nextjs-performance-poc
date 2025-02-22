@@ -59,7 +59,6 @@ const SizeInput: React.FC<{
 
   return (
     <InputNumber
-      style={{ width: '100%' }}
       addonAfter={
         <UnitSelect
           onChange={(value) => {
@@ -82,6 +81,7 @@ const SizeInput: React.FC<{
           setSize(value);
         }
       }}
+      style={{ width: '100%' }}
       value={size}
     />
   );

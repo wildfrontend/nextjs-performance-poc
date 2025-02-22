@@ -1,4 +1,5 @@
 import { Select } from 'antd';
+
 import { ActivatedField } from '../types/value';
 
 const ActiveSelect: React.FC<{
@@ -8,12 +9,12 @@ const ActiveSelect: React.FC<{
   return (
     <Select
       onChange={onChange}
-      value={value}
       options={[
-        { label: 'On', value: true },
-        { label: 'Off', value: false },
+        { label: 'On', value: "true" },
+        { label: 'Off', value: "false" },
       ]}
       style={{ width: '100%' }}
+      value={value}
     />
   );
 };

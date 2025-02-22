@@ -1,5 +1,6 @@
 import { Select, SelectProps, Tag, TagProps } from 'antd';
 import React from 'react';
+
 import { StatusField } from '../types/value';
 
 type TagRender = SelectProps['tagRender'];
@@ -44,12 +45,12 @@ const StatusSelects: React.FC<{
 }> = ({ onChange, value }) => {
   return (
     <Select
-      onChange={onChange}
-      value={value}
       mode="multiple"
+      onChange={onChange}
       options={options}
       style={{ width: '100%' }}
       tagRender={tagRender}
+      value={value}
     />
   );
 };

@@ -1,6 +1,7 @@
 import { Select, Tag } from 'antd';
 import { SelectProps } from 'antd/es/select';
 import React from 'react';
+
 import { ParentIdField } from '../types/value';
 
 const options = [
@@ -36,13 +37,13 @@ const ParentIdSelect: React.FC<{
 }> = ({ onChange, value }) => {
   return (
     <Select
-      onChange={onChange}
-      value={value}
       mode="multiple"
+      onChange={onChange}
       options={options}
       placeholder="Filter"
       style={{ width: '100%' }}
       tagRender={tagRender}
+      value={value}
     />
   );
 };
