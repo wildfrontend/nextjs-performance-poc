@@ -1,7 +1,7 @@
 import { Select } from 'antd';
 import React from 'react';
 
-import { QueryKey } from '../types/value';
+import { QueryField, QueryKey } from '../types/value';
 
 const options = [
   { label: 'Status', value: QueryKey.status },
@@ -11,9 +11,9 @@ const options = [
 ];
 
 const QueryKeySelect: React.FC<{
-  onChange: (value: QueryKey) => void;
-  value?: QueryKey;
-  selectKeys?: (QueryKey | undefined)[];
+  onChange: (value: string) => void;
+  value?: string;
+  selectKeys?: QueryField['key'][];
 }> = ({ onChange, selectKeys, value }) => {
   return (
     <Select

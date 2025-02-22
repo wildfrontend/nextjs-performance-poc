@@ -48,7 +48,7 @@ const SizeInput: React.FC<{
   const [unit, setUnit] = useState(SizeUnit.MiB);
   const [operator, setOperator] = useState<string>(Operator.ge);
 
-  const [size, setSize] = useState(0);
+  const [size, setSize] = useState(1);
 
   useEffect(() => {
     onChange({

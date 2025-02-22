@@ -40,3 +40,17 @@ export type StatusField = {
   key: QueryKey.status;
   value: string[];
 };
+
+export type QueryField = {
+  key: string | undefined;
+  value:
+    | ActivatedField['value']
+    | ParentIdField['value']
+    | SizeField['value']
+    | StatusField['value']
+    | undefined;
+};
+
+export type QueryFormValues = {
+  filters: QueryField[];
+};
