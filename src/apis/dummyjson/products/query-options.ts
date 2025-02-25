@@ -1,4 +1,8 @@
-import { infiniteQueryOptions, queryOptions } from '@tanstack/react-query';
+import {
+  infiniteQueryOptions,
+  queryOptions,
+  useQuery,
+} from '@tanstack/react-query';
 
 import { GetProductsQueryParams } from '@/types/apis/products';
 import axios from '@/utils/axios';
@@ -59,3 +63,16 @@ export const getProductOptions = (productId: string | number) =>
       return response.data;
     },
   });
+
+export const useFetchProduct = (productId: string | number) => {
+  const query = useQuery(
+    queryOptions({
+      queryKey: ['products', 'detail', productId],
+      queryFn: async ({ signal }) => {
+        const response = await axios.get(`/products/${productId}`, { signal });
+        return response.data;
+      },
+    })
+  );
+  return query;
+};

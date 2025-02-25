@@ -1,13 +1,9 @@
-import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
+import { notFound } from 'next/navigation';
 import React from 'react';
 
-import {
-  getProductOptions,
-  getProductsByCategoryOptions,
-} from '@/apis/dummyjson/products/query-options';
-import CategoryProductList from '@/components/react-query/products/category/list';
-import ProductCategory from '@/components/react-query/products/navigation/category';
-import { getQueryClient } from '@/utils/react-query';
+import { getProductBySSR } from '@/apis/dummyjson/products/api';
+import ProductDetail from '@/components/react-query/products/detail/main';
+import ProductProvider from '@/components/react-query/products/detail/provider';
 
 // https://nextjs.org/docs/messages/sync-dynamic-apis
 const Page: React.FC<{
@@ -17,20 +13,18 @@ const Page: React.FC<{
     skip?: string;
   }>;
 }> = async ({ params, searchParams }) => {
-  const queryClient = getQueryClient();
   const { productId } = await params;
-  await Promise.all([queryClient.prefetchQuery(getProductOptions(productId))]);
-  console.log(dehydrate(queryClient).queries);
-  return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
-      <div className="max-w-[1280px] mx-auto px-4">
-        Product Id :{productId}
-        <pre>
-          {JSON.stringify(dehydrate(queryClient).queries, null, 2)}
-        </pre>
-      </div>
-    </HydrationBoundary>
-  );
+  try {
+    const product = await getProductBySSR(productId);
+    console.log(product)
+    return (
+      <ProductProvider product={product}>
+        <ProductDetail />
+      </ProductProvider>
+    );
+  } catch (error) {
+    notFound();
+  }
 };
 
 export default Page;
