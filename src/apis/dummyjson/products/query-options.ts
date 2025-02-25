@@ -50,3 +50,12 @@ export const getProductCategoriesOptions = () =>
       return response.data;
     },
   });
+
+export const getProductOptions = (productId: string | number) =>
+  queryOptions({
+    queryKey: ['products', 'detail', productId],
+    queryFn: async ({ signal }) => {
+      const response = await axios.get(`/products/${productId}`, { signal });
+      return response.data;
+    },
+  });

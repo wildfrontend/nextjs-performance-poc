@@ -7,6 +7,14 @@ import { useFetchProductsByCategory } from '@/apis/dummyjson/products/client';
 import useQueryParams from '@/hooks/query-params';
 
 import ProductPagination from '../navigation/pagination';
+import { compile } from 'path-to-regexp';
+import Link from 'next/link';
+
+const generateProductLink = (productId: string | number) => {
+  return compile("/react-query/products/:productId")({
+    productId: `${productId}`,
+  })
+}
 
 const CategoryProductList: React.FC = () => {
   const params = useParams<{ category: string }>();
@@ -50,7 +58,7 @@ const CategoryProductList: React.FC = () => {
                 <h2 className="card-title">{item.title}</h2>
                 <p>{item.category}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
+                  <Link href={generateProductLink(item.id)} className="btn btn-primary">Buy Now</Link>
                 </div>
               </div>
             </div>
