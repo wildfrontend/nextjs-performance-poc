@@ -39,7 +39,8 @@
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
     "react-intersection-observer": "^9.15.1",
-    "upload-images-converter": "^2.0.2"
+    "upload-images-converter": "^2.0.2",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@builder.io/partytown": "^0.10.3",

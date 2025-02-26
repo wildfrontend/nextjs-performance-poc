@@ -22,8 +22,8 @@ const CategoryProductList: React.FC = () => {
   const { data, isFetching, error } = useFetchProductsByCategory({
     category: params.category,
     params: {
-      limit: urlSearchParams.get('limit') ?? 3,
-      skip: urlSearchParams.get('skip') ?? undefined,
+      limit: 3,
+      skip: urlSearchParams.get('skip')
     },
   });
   if (isFetching) {
@@ -66,7 +66,7 @@ const CategoryProductList: React.FC = () => {
         })}
       </div>
       <div className="flex justfiy-center">
-        <ProductPagination skip={data.skip} total={data.total} />
+        <ProductPagination page={data.skip / 3} total={data.total} />
       </div>
     </div>
   );

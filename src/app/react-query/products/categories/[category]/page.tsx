@@ -5,6 +5,7 @@ import { getProductsByCategoryOptions } from '@/apis/dummyjson/products/query-op
 import CategoryProductList from '@/components/react-query/products/category/list';
 import ProductCategory from '@/components/react-query/products/navigation/category';
 import { getQueryClient } from '@/utils/react-query';
+import { z } from "zod";
 
 // https://nextjs.org/docs/messages/sync-dynamic-apis
 const Page: React.FC<{
@@ -22,7 +23,7 @@ const Page: React.FC<{
     queryClient.prefetchQuery(
       getProductsByCategoryOptions(category, {
         limit: limit ?? 3,
-        skip,
+        skip: skip,
       })
     ),
   ]);
