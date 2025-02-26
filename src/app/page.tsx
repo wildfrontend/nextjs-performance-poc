@@ -114,8 +114,8 @@ export default function Home() {
           <Link href="/react-query/products" prefetch={false}>
             Products
           </Link>
-          <Link href="/react-query/products/stories" prefetch={false}>
-            Products - story
+          <Link href="/react-query/products/categories/smartphones/stories" prefetch={false}>
+            Products - smartphones story
           </Link>
         </div>
       </div>
