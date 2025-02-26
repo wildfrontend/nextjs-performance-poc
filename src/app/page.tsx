@@ -112,7 +112,10 @@ export default function Home() {
           }}
         >
           <Link href="/react-query/products" prefetch={false}>
-            React-Query Client - Products
+            Products
+          </Link>
+          <Link href="/react-query/products/stories" prefetch={false}>
+            Products - story
           </Link>
         </div>
       </div>
