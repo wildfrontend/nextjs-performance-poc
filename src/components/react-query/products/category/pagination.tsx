@@ -2,9 +2,9 @@ import React, { useMemo } from 'react';
 
 import useQueryParams from '@/hooks/query-params';
 
-const ProductPagination: React.FC<{ total: number; page: number }> = ({
+const ProductPagination: React.FC<{ total: number; currentTotal: number }> = ({
   total,
-  page,
+  currentTotal,
 }) => {
   const { setQueryParams } = useQueryParams();
   const limit = 3;
@@ -14,13 +14,13 @@ const ProductPagination: React.FC<{ total: number; page: number }> = ({
     <div className="join">
       {pageNumbers.map((pageNo) => {
         const value = pageNo - 1;
-        console.log(value, page)
+        const page = Math.ceil(currentTotal / limit);
         return (
           <button
             className={`join-item btn ${page === value ? 'btn-active' : ''}`}
             key={pageNo}
             onClick={() =>
-              setQueryParams({ skip: value > 0 ? value : undefined })
+              setQueryParams({ page: value > 0 ? value : undefined })
             }
           >
             {pageNo}

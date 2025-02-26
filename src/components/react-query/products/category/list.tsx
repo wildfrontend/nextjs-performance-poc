@@ -1,20 +1,21 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { compile } from 'path-to-regexp';
+import { z } from 'zod';
 
 import { useFetchProductsByCategory } from '@/apis/dummyjson/products/client';
 import useQueryParams from '@/hooks/query-params';
 
-import ProductPagination from '../navigation/pagination';
-import { compile } from 'path-to-regexp';
-import Link from 'next/link';
+import ProductPagination from './pagination';
 
 const generateProductLink = (productId: string | number) => {
-  return compile("/react-query/products/:productId")({
+  return compile('/react-query/products/:productId')({
     productId: `${productId}`,
-  })
-}
+  });
+};
 
 const CategoryProductList: React.FC = () => {
   const params = useParams<{ category: string }>();
@@ -22,8 +23,13 @@ const CategoryProductList: React.FC = () => {
   const { data, isFetching, error } = useFetchProductsByCategory({
     category: params.category,
     params: {
-      limit: 3,
-      skip: urlSearchParams.get('skip')
+      page: z.coerce
+        .string()
+        .optional()
+        .transform((val) => {
+          return val === "null" ? undefined : val;
+        })
+        .parse(urlSearchParams.get('page')),
     },
   });
   if (isFetching) {
@@ -58,7 +64,12 @@ const CategoryProductList: React.FC = () => {
                 <h2 className="card-title">{item.title}</h2>
                 <p>{item.category}</p>
                 <div className="card-actions justify-end">
-                  <Link href={generateProductLink(item.id)} className="btn btn-primary">Buy Now</Link>
+                  <Link
+                    href={generateProductLink(item.id)}
+                    className="btn btn-primary"
+                  >
+                    Buy Now
+                  </Link>
                 </div>
               </div>
             </div>
@@ -66,7 +77,7 @@ const CategoryProductList: React.FC = () => {
         })}
       </div>
       <div className="flex justfiy-center">
-        <ProductPagination page={data.skip / 3} total={data.total} />
+        <ProductPagination currentTotal={data.skip} total={data.total} />
       </div>
     </div>
   );

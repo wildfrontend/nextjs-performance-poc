@@ -14,13 +14,14 @@ export const useFetchProducts = (props?: {
   params?: GetProductsQueryParams;
 }) => {
   const query = useInfiniteQuery(getProductsOptions(props?.params));
-  console.log(props);
   return query;
 };
 
 export const useFetchProductsByCategory = (props: {
   category: string;
-  params?: GetProductsQueryParams;
+  params?: {
+    page?: string;
+  };
 }) => {
   const query = useQuery(
     getProductsByCategoryOptions(props.category, props?.params)
