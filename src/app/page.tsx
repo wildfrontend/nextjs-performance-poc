@@ -114,7 +114,10 @@ export default function Home() {
           <Link href="/react-query/products" prefetch={false}>
             Products
           </Link>
-          <Link href="/react-query/products/categories/smartphones/stories" prefetch={false}>
+          <Link
+            href="/react-query/products/categories/smartphones/stories"
+            prefetch={false}
+          >
             Products - smartphones story
           </Link>
         </div>
@@ -130,6 +133,20 @@ export default function Home() {
         >
           <Link href="/antd" prefetch={false}>
             Antd - Dashboard
+          </Link>
+        </div>
+      </div>
+      {/* ANCHOR Slider LCP  */}
+      <div>
+        <h2> Slider LCP Performance</h2>
+        <div
+          style={{
+            display: 'flex',
+            gap: '16px',
+          }}
+        >
+          <Link href="/swiper" prefetch={false}>
+            Swiper - default
           </Link>
         </div>
       </div>

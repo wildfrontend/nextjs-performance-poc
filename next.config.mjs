@@ -51,6 +51,9 @@ const nextConfig = {
       {
         hostname: 'cdn.dummyjson.com',
       },
+      {
+        hostname: "fastly.picsum.photos"
+      }
     ],
   },
   experimental: {
