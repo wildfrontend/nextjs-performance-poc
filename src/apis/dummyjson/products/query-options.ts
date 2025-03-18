@@ -5,14 +5,17 @@ import {
 } from '@tanstack/react-query';
 import { z } from 'zod';
 
-import { GetProductsQueryParams } from '@/types/apis/products';
+import {
+  GetProductsQueryParams,
+  GetProductsResponse,
+} from '@/types/apis/products';
 import axios from '@/utils/axios';
 
 export const getProductsOptions = (params?: GetProductsQueryParams) =>
   infiniteQueryOptions({
     queryKey: ['products', params],
     queryFn: async ({ pageParam, signal }) => {
-      const response = await axios.get('/products', {
+      const response = await axios.get<GetProductsResponse>('/products', {
         params: {
           limit: params?.limit,
           skip: z.coerce.number().default(0).parse(params?.limit) * pageParam,
@@ -61,10 +64,13 @@ export const getProductStoriesByCategoryOptions = (
   infiniteQueryOptions({
     queryKey: ['products', 'stories', category, params],
     queryFn: async ({ pageParam, signal }) => {
-      const response = await axios.get(`/products/category/${category}`, {
-        params: { limit: 3, skip: pageParam * 3 },
-        signal,
-      });
+      const response = await axios.get<GetProductsResponse>(
+        `/products/category/${category}`,
+        {
+          params: { limit: 3, skip: pageParam * 3 },
+          signal,
+        }
+      );
       return response.data;
     },
     initialPageParam: 0,

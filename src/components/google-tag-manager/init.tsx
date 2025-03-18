@@ -10,7 +10,7 @@ if (typeof window !== 'undefined') {
   });
 }
 
-const InitGPT: React.FC<{ strategy?: ScriptProps['strategy'] }> = ({
+const InitGPT: React.FC<{ strategy?: ScriptProps['strategy']}> = ({
   strategy,
 }) => {
   return (

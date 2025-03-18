@@ -6,6 +6,8 @@ import { useParams } from 'next/navigation';
 
 import { useFetchProductStoriesByCategory } from '@/apis/dummyjson/products/client';
 
+import ProductStory from './item';
+
 const ProductList: React.FC = () => {
   const { category } = useParams<{ category: string }>();
   const {
@@ -25,30 +27,10 @@ const ProductList: React.FC = () => {
     return <div>{JSON.stringify(error, null, 4)}</div>;
   }
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="container flex flex-col">
       {data?.pages?.map((group, i) => {
-        // @ts-ignore
         return group.products.map((item) => {
-          return (
-            <div className="card bg-base-100 w-96 shadow-xl" key={item.id}>
-              <figure>
-                <Image
-                  alt="Shoes"
-                  height={300}
-                  src={item.thumbnail}
-                  unoptimized
-                  width={300}
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">{item.title}</h2>
-                <p>{item.category}</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
-                </div>
-              </div>
-            </div>
-          );
+          return <ProductStory key={item.id} product={item} />;
         });
       })}
       <div>
