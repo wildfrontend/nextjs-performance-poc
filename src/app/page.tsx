@@ -148,6 +148,9 @@ export default function Home() {
           <Link href="/swiper" prefetch={false}>
             Swiper - default
           </Link>
+          <Link href="/swiper/performance" prefetch={false}>
+            Swiper - performance
+          </Link>
         </div>
       </div>
     </div>
