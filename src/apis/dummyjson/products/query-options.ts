@@ -96,16 +96,3 @@ export const getProductOptions = (productId: string | number) =>
       return response.data;
     },
   });
-
-export const useFetchProduct = (productId: string | number) => {
-  const query = useQuery(
-    queryOptions({
-      queryKey: ['products', 'detail', productId],
-      queryFn: async ({ signal }) => {
-        const response = await axios.get(`/products/${productId}`, { signal });
-        return response.data;
-      },
-    })
-  );
-  return query;
-};
