@@ -1,16 +1,22 @@
-const YoutubeEmbed: React.FC = () => {
+import React from 'react';
 
+const YoutubeHero: React.FC<{
+  videoId: string;
+  title?: string;
+  description?: string;
+}> = ({ videoId, title, description }) => {
   return (
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/mRma6NkHwWU?si=axHmQjB6l8x1FUNV&autoplay=1"
-      title="YouTube video player"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerPolicy="strict-origin-when-cross-origin"
-      allowFullScreen
-    ></iframe>
+    <div className="relative w-full h-[50vh] max-h-screen overflow-hidden bg-gradient-to-b from-black/50 via-transparent to-black/80">
+      {/* YouTube 背景影片 */}
+      <iframe
+        className="absolute z-10 top-0 left-0 w-full h-full object-cover"
+        src={`https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&modestbranding=0`}
+        title="YouTube video player"
+        allow="autoplay; encrypted-media; fullscreen"
+        referrerPolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    </div>
   );
 };
 
-export default YoutubeEmbed
+export default YoutubeHero;

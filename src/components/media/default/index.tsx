@@ -3,7 +3,7 @@ import YoutubeEmbed from "../embed";
 const DefaultMedia: React.FC = () => {
 
   return (
-    <YoutubeEmbed />
+    <YoutubeEmbed videoId="mRma6NkHwWU" />
   );
 };
 
