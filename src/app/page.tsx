@@ -153,6 +153,23 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      {/* ANCHOR Media LCP  */}
+      <div>
+        <h2> Embeds Performance</h2>
+        <div
+          style={{
+            display: 'flex',
+            gap: '16px',
+          }}
+        >
+          <Link href="/media" prefetch={false}>
+            Media - default
+          </Link>
+          <Link href="/media/capture" prefetch={false}>
+            Media - Capture
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
