@@ -30,6 +30,7 @@
     "clsx": "^2.1.1",
     "compressorjs": "^1.2.1",
     "cropperjs": "^1.6.2",
+    "date-fns": "^4.1.0",
     "dayjs": "^1.11.13",
     "next": "15.1.2",
     "path-to-regexp": "^8.2.0",

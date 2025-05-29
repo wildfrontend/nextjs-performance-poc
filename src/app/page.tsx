@@ -170,6 +170,21 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      {/* ANCHOR Demo - Countdown */}
+      <div>
+        <h2>Demo</h2>
+        <div
+          style={{
+            display: 'flex',
+            gap: '16px',
+          }}
+        >
+          <Link href="/demo/countdown" prefetch={false}>
+            Countdown 測試頁
+          </Link>
+        </div>
+        <hr />
+      </div>
     </div>
   );
 }
