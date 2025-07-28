@@ -182,6 +182,9 @@ export default function Home() {
           <Link href="/demo/countdown" prefetch={false}>
             Countdown 測試頁
           </Link>
+            <Link href="/demo/promise-lock" prefetch={false}>
+            PromiseLock 測試頁
+          </Link>
         </div>
         <hr />
       </div>
