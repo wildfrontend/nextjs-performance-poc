@@ -1,6 +1,6 @@
 import { useInfiniteQuery, useQuery } from '@tanstack/react-query';
 
-import { GetProductsQueryParams } from '@/types/apis/products';
+import { GetProductsQueryParams } from '@/types/apis/dummyjson/products';
 
 import {
   getProductStoriesByCategoryOptions,

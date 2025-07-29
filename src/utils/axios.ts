@@ -1,7 +1,6 @@
 import Axios from 'axios';
 
-const axios = Axios.create({
+export const dummyjsonAxios = Axios.create({
   baseURL: 'https://dummyjson.com',
 });
 
-export default axios;
