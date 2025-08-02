@@ -1,0 +1,789 @@
+{
+	"info": {
+		"_postman_id": "846c79da-9560-4783-8009-194dc080cc71",
+		"name": "DummyJSON",
+		"description": "Коллекция заглушечного API [https://dummyjson.com/](https://dummyjson.com/)\n\nПозволяет на примере разобрать многие вопросы связанные с REST like API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44564582",
+		"_collection_link": "https://www.postman.com/nastyaku/test-nastya/collection/80ounfd/dummyjson?action=share&source=collection_link&creator=44564582"
+	},
+	"item": [
+		{
+			"name": "/users",
+			"item": [
+				{
+					"name": "/users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "skip",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "select",
+									"value": "age,firstName,lastName,gender",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Получение списка пользователей\n\nтак же работают параметры\n\nlimit - лимит записей. Используйте limit=0 для получения всех записей.\n\nskip - пропус кол-ва записей\n\nselect - перечень конкретных нужных полей ответа через запятую"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/search?q=John",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users/search?q=John",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "John"
+								}
+							]
+						},
+						"description": "Поиск пользователя"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/filter?key=hair.color&value=Brown",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users/filter?key=hair.color&value=Brown",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "hair.color"
+								},
+								{
+									"key": "value",
+									"value": "Brown"
+								},
+								{
+									"key": "limit",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "skip",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "select",
+									"value": "age,firstName,lastName,gender",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Фильтр ключ = значение\n\nЧуствителен к регистру\n\nтак же работают параметры\n\nlimit - лимит записей. Используйте limit=0 для получения всех записей.\n\nskip - пропус кол-ва записей\n\nselect - перечень конкретных нужных полей ответа через запятую"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/add",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Иванов\",\n    \"lastName\": \"Иван\",\n    \"maidenName\": \"Иванович\",\n    \"age\": 99,\n    \"gender\": \"\",\n    \"email\": \"\",\n    \"phone\": \"\",\n    \"username\": \"\",\n    \"password\": \"\",\n    \"birthDate\": \"\",\n    \"image\": \"\",\n    \"bloodGroup\": \"\",\n    \"height\": null,\n    \"weight\": null,\n    \"eyeColor\": \"\",\n    \"hair\": {\n        \"color\": \"\",\n        \"type\": \"\"\n    },\n    \"domain\": \"\",\n    \"ip\": \"\",\n    \"address\": {\n        \"address\": \"\",\n        \"city\": \"\",\n        \"coordinates\": {\n            \"lat\": null,\n            \"lng\": null\n        },\n        \"postalCode\": \"\",\n        \"state\": \"\"\n    },\n    \"macAddress\": \"\",\n    \"university\": \"\",\n    \"bank\": {\n        \"cardExpire\": \"\",\n        \"cardNumber\": \"\",\n        \"cardType\": \"\",\n        \"currency\": \"\",\n        \"iban\": \"\"\n    },\n    \"company\": {\n        \"address\": {\n            \"address\": \"\",\n            \"city\": \"\",\n            \"coordinates\": {\n                \"lat\": null,\n                \"lng\": null\n            },\n            \"postalCode\": \"\",\n            \"state\": \"\"\n        },\n        \"department\": \"\",\n        \"name\": \"\",\n        \"title\": \"\"\n    },\n    \"ein\": \"\",\n    \"ssn\": \"\",\n    \"userAgent\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/users/add",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"add"
+							]
+						},
+						"description": "Создание нового пользователя.\n\nВ реальности на сервере ничего не происходит, пользователь не создается.\n\nСервер отправляет данные по пользователю, которые вы задали. Имитируя POST запрос."
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{{user_id}}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users/{{user_id}}",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"{{user_id}}"
+							]
+						},
+						"description": "Получение конкретного пользователя по id"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{{user_id}}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Стригобор\",\n    \"lastName\": \"Боравский\",\n    \"maidenName\": \"Шматович\",\n    \"age\": 50,\n    \"gender\": \"male\",\n    \"email\": \"atuny0@sohu.com\",\n    \"phone\": \"+63 791 675 8914\",\n    \"username\": \"atuny0\",\n    \"password\": \"9uQFF1Lh\",\n    \"birthDate\": \"2000-12-25\",\n    \"image\": \"https://robohash.org/hicveldicta.png\",\n    \"bloodGroup\": \"A−\",\n    \"height\": 189,\n    \"weight\": 75.4,\n    \"eyeColor\": \"Green\",\n    \"hair\": {\n        \"color\": \"\",\n        \"type\": \"\"\n    },\n    \"domain\": \"slashdot.org\",\n    \"ip\": \"117.29.86.254\",\n    \"address\": {\n        \"address\": \"\",\n        \"city\": \"\",\n        \"coordinates\": {\n            \"lat\": null,\n            \"lng\": null\n        },\n        \"postalCode\": \"\",\n        \"state\": \"\"\n    },\n    \"macAddress\": \"13:69:BA:56:A3:74\",\n    \"university\": \"Capitol University\",\n    \"bank\": {\n        \"cardExpire\": \"\",\n        \"cardNumber\": \"\",\n        \"cardType\": \"\",\n        \"currency\": \"\",\n        \"iban\": \"\"\n    },\n    \"company\": {\n        \"address\": {\n            \"address\": \"\",\n            \"city\": \"\",\n            \"coordinates\": {\n                \"lat\": null,\n                \"lng\": null\n            },\n            \"postalCode\": \"\",\n            \"state\": \"\"\n        },\n        \"department\": \"\",\n        \"name\": \"\",\n        \"title\": \"\"\n    },\n    \"ein\": \"20-9487066\",\n    \"ssn\": \"661-64-2976\",\n    \"userAgent\": \"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/12.0.702.0 Safari/534.24\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/users/{{user_id}}",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"{{user_id}}"
+							]
+						},
+						"description": "Обновление данных по id пользователя.\n\nВ реальности на сервере ничего не происходит, пользователь не создается.\n\nСервер отправляет данные по пользователю, которые вы задали. Имитируя PUT запрос."
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{{user_id}}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://dummyjson.com/users/{{user_id}}",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"{{user_id}}"
+							]
+						},
+						"description": "Удаление пользователя по id.\n\nВ реальности на сервере ничего не происходит, пользователь не удаляется.\n\nСервер отправляет данные по пользователю, которые вы задали. Имитируя DELETE запрос.  \n\nв теле ответа можно увидеть 2 новых параметра\n\n\"isDeleted\": true,\n\n\"deletedOn\": \"2023-03-17T18:54:26.037Z\""
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{{user_id}}/carts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users/{{user_id}}/carts",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"carts"
+							]
+						},
+						"description": "Получить содержимое корзины по id пользователя"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{{user_id}}/posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users/{{user_id}}/posts",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"posts"
+							]
+						},
+						"description": "Получить публикации по id пользователя"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{{user_id}}/todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/users/{{user_id}}/todos",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"users",
+								"{{user_id}}",
+								"todos"
+							]
+						},
+						"description": "Получить список дел по id пользователя"
+					},
+					"response": []
+				}
+			],
+			"description": "Ресурс users позволяет работать с сущностями user и их атрибутами"
+		},
+		{
+			"name": "/auth",
+			"item": [
+				{
+					"name": "/login",
+					"item": [
+						{
+							"name": "/login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"pm.environment.set(\"jwt\", pm.response.json()[\"token\"]);",
+											"pm.environment.set(\"user_id\", pm.response.json()[\"id\"]);",
+											"//pm.environment.set(\"jwt\", \"fail_token_test\");",
+											"//pm.environment.set(\"user_id\", \"fail_user_id_test\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"type": "text"
+										},
+										{
+											"key": "expiresInMins",
+											"value": "5",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://dummyjson.com/auth/login",
+									"protocol": "https",
+									"host": [
+										"dummyjson",
+										"com"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								},
+								"description": "Запрос авторизации"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "/users",
+					"item": [
+						{
+							"name": "/{{user_id}}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"tests[\"Body contains status\"] = responseBody.has(\"test_param_fail\");",
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://dummyjson.com/auth/users/{{user_id}}",
+									"protocol": "https",
+									"host": [
+										"dummyjson",
+										"com"
+									],
+									"path": [
+										"auth",
+										"users",
+										"{{user_id}}"
+									]
+								},
+								"description": "Получение конкретного пользователя по id"
+							},
+							"response": []
+						},
+						{
+							"name": "/{{user_id}}/carts",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://dummyjson.com/auth/users/{{user_id}}/carts?limit=3",
+									"protocol": "https",
+									"host": [
+										"dummyjson",
+										"com"
+									],
+									"path": [
+										"auth",
+										"users",
+										"{{user_id}}",
+										"carts"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "3"
+										}
+									]
+								},
+								"description": "Получить содержимое корзины по id пользователя"
+							},
+							"response": []
+						},
+						{
+							"name": "/{{user_id}}/todos",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"todo_id\", pm.response.json(\"id\")[\"todos\"][0][\"id\"]);",
+											"",
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://dummyjson.com/auth/users/{{user_id}}/todos?limit=3",
+									"protocol": "https",
+									"host": [
+										"dummyjson",
+										"com"
+									],
+									"path": [
+										"auth",
+										"users",
+										"{{user_id}}",
+										"todos"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "3"
+										}
+									]
+								},
+								"description": "Получить список дел по id пользователя"
+							},
+							"response": []
+						},
+						{
+							"name": "/{{user_id}}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"firstName\": \"Стригобор\",\n    \"lastName\": \"Боравский\",\n    \"maidenName\": \"Шматович\",\n    \"age\": 50,\n    \"gender\": \"hurms\",\n    \"email\": \"at@sosu.com\",\n    \"phone\": \"+7 555 555 5555\",\n    \"username\": \"microbiolog\",\n    \"password\": \"qwerty123\",\n    \"birthDate\": \"1999-37-85\",\n    \"image\": \"https://robohash.org/hicveldicta.png\",\n    \"bloodGroup\": \"D/\",\n    \"height\": 112,\n    \"weight\": 89.7,\n    \"eyeColor\": \"Black\",\n    \"hair\": {\n        \"color\": \"Blue\",\n        \"type\": \"Gay\"\n    },\n    \"domain\": \"ducks.org\",\n    \"ip\": \"117.29.86.254\",\n    \"address\": {\n        \"address\": \"\",\n        \"city\": \"\",\n        \"coordinates\": {\n            \"lat\": null,\n            \"lng\": null\n        },\n        \"postalCode\": \"\",\n        \"state\": \"\"\n    },\n    \"macAddress\": \"13:69:BA:56:A3:74\",\n    \"university\": \"Capitol University\",\n    \"bank\": {\n        \"cardExpire\": \"\",\n        \"cardNumber\": \"\",\n        \"cardType\": \"\",\n        \"currency\": \"\",\n        \"iban\": \"\"\n    },\n    \"company\": {\n        \"address\": {\n            \"address\": \"\",\n            \"city\": \"\",\n            \"coordinates\": {\n                \"lat\": null,\n                \"lng\": null\n            },\n            \"postalCode\": \"\",\n            \"state\": \"\"\n        },\n        \"department\": \"\",\n        \"name\": \"\",\n        \"title\": \"\"\n    },\n    \"ein\": \"20-9487066\",\n    \"ssn\": \"661-64-2976\",\n    \"userAgent\": \"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/12.0.702.0 Safari/534.24\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dummyjson.com/auth/users/{{user_id}}",
+									"protocol": "https",
+									"host": [
+										"dummyjson",
+										"com"
+									],
+									"path": [
+										"auth",
+										"users",
+										"{{user_id}}"
+									]
+								},
+								"description": "Обновление данных по id пользователя.\n\nВ реальности на сервере ничего не происходит, пользователь не создается.\n\nСервер отправляет данные по пользователю, которые вы задали. Имитируя PUT запрос."
+							},
+							"response": []
+						},
+						{
+							"name": "/{{user_id}}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dummyjson.com/auth/users/{{user_id}}",
+									"protocol": "https",
+									"host": [
+										"dummyjson",
+										"com"
+									],
+									"path": [
+										"auth",
+										"users",
+										"{{user_id}}"
+									]
+								},
+								"description": "Удаление пользователя по id.\n\nВ реальности на сервере ничего не происходит, пользователь не удаляется.\n\nСервер отправляет данные по пользователю, которые вы задали. Имитируя DELETE запрос.  \n\nв теле ответа можно увидеть 2 новых параметра\n\n\"isDeleted\": true,\n\n\"deletedOn\": \"2023-03-17T18:54:26.037Z\""
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "/todos",
+					"item": [
+						{
+							"name": "/{{todo_id}}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"completed\": true\n  }"
+								},
+								"url": {
+									"raw": "https://dummyjson.com/auth/todos/{{todo_id}}",
+									"protocol": "https",
+									"host": [
+										"dummyjson",
+										"com"
+									],
+									"path": [
+										"auth",
+										"todos",
+										"{{todo_id}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/products",
+			"item": [
+				{
+					"name": "/{{product_id}}",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"product_id\", Math.floor(Math.random() * 150));"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"tests[\"Body contains status\"] = responseBody.has(\"price\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/products/{{product_id}}",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"products",
+								"{{product_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "http_test",
+			"item": [
+				{
+					"name": "/http/{{http_code}}/{{http_message}}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dummyjson.com/http/{{http_code}}/{{http_message}}",
+							"protocol": "https",
+							"host": [
+								"dummyjson",
+								"com"
+							],
+							"path": [
+								"http",
+								"{{http_code}}",
+								"{{http_message}}"
+							]
+						},
+						"description": "Тест http status"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
