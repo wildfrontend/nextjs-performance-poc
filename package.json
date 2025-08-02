@@ -44,7 +44,8 @@
     "react-intersection-observer": "^9.15.1",
     "swiper": "^11.2.5",
     "upload-images-converter": "^2.0.2",
-    "zod": "^3.24.2"
+    "zod": "^3.24.2",
+    "zustand": "^5.0.7"
   },
   "devDependencies": {
     "@builder.io/partytown": "^0.10.3",
