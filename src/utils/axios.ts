@@ -5,4 +5,5 @@ export const dummyjsonAxios = Axios.create({
 });
 
 export const nextjsAxios = Axios.create({
+  baseURL: '/api',
 });

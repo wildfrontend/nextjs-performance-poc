@@ -40,7 +40,7 @@ const useNextjsInterceptor = () => {
   const responseError: ResponseErrorFunction = useMemo(
     () => async (error: AxiosError<any>) => {
       if (error.response?.status === HttpStatusCode.Unauthorized) {
-        console.log('Unauthorized', error);
+        console.log('NextJS API Unauthorized', error);
         try {
           if ((refreshTime ?? 0) > 1) {
             throw 'over retry time';
@@ -48,7 +48,7 @@ const useNextjsInterceptor = () => {
           setRefreshTime((state) => (state ?? 0) + 1);
           await onRefreshToken({ refreshToken, expiresInMins: 1 });
         } catch (error) {
-          console.log('refresh client error');
+          console.log('NextJS refresh client error');
           onLogout();
         }
       }
