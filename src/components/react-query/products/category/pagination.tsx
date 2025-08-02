@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 
-import useQueryParams from '@/hooks/query-params';
+import useQueryParams from '@/hooks/global/query-params';
 
 const ProductPagination: React.FC<{ total: number; currentTotal: number }> = ({
   total,

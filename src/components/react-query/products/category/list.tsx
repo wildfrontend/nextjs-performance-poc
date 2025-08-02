@@ -7,7 +7,7 @@ import { compile } from 'path-to-regexp';
 import { z } from 'zod';
 
 import { useFetchProductsByCategory } from '@/apis/dummyjson/products/client';
-import useQueryParams from '@/hooks/query-params';
+import useQueryParams from '@/hooks/global/query-params';
 
 import ProductPagination from './pagination';
 

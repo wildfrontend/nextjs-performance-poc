@@ -1,13 +1,16 @@
 import { Box, Button, Paper, TextField, Typography } from '@mui/material';
 import React from 'react';
 
+import useAuth from '@/hooks/auth/auth';
+
 const username = 'emilys';
 const password = 'emilyspass';
 
 export const LoginForm: React.FC = () => {
-
+  const { isRefreshing, isAuthorizing, onLogin } = useAuth();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    onLogin({ username, password, expiresInMins: 1 });
   };
 
   return (
@@ -40,13 +43,13 @@ export const LoginForm: React.FC = () => {
         />
         <Button
           color="primary"
-          // disabled={isPending || isAuthLoading}
+          disabled={isRefreshing || isAuthorizing}
           fullWidth
           sx={{ py: 1.5, fontWeight: 'bold' }}
           type="submit"
           variant="contained"
         >
-          {/* {isPending || isAuthLoading ? '登入中...' : '登入'} */}
+          {isRefreshing || isAuthorizing ? '登入中...' : '登入'}
         </Button>
       </Box>
       <Box sx={{ mt: 3, color: 'text.secondary', fontSize: 14 }}>

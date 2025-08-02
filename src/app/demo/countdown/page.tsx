@@ -6,7 +6,7 @@ import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { useState } from 'react';
 
-import useCountdown from '@/hooks/count-down';
+import useCountdown from '@/hooks/global/count-down';
 
 const Page = () => {
   const [targetDate, setTargetDate] = useState<Date | null>(

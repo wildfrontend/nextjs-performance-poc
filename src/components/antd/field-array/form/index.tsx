@@ -19,7 +19,7 @@ import {
 import { JSX, useState } from 'react';
 import { Controller, useFieldArray, useForm } from 'react-hook-form';
 
-import useQueryParams from '@/hooks/query-params';
+import useQueryParams from '@/hooks/global/query-params';
 
 import ActiveSelect from '../fields/active';
 import ParentIdSelect from '../fields/parent-id';

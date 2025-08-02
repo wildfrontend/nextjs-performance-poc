@@ -1,12 +1,13 @@
 import { Box, Paper, Typography } from '@mui/material';
 import React from 'react';
 
-import { useAuth } from '@/providers/auth/hook';
+import { useFetchAuthUser } from '@/apis/dummyjson/auth/client';
 
 // 路徑依你的專案
 
 export const AuthStatusCard: React.FC = () => {
-  const { isAuth, accessToken } = useAuth();
+  const { data, isAuth } = useFetchAuthUser();
+  const user = data;
   return (
     <Paper elevation={2} sx={{ p: 3, bgcolor: '#f9fafb' }}>
       <Typography fontWeight="bold" gutterBottom variant="h6">
@@ -16,7 +17,7 @@ export const AuthStatusCard: React.FC = () => {
         <Typography>
           <strong>登入狀態:</strong> {isAuth ? '已登入' : '未登入'}
         </Typography>
-        {/* {isAuth && user && (
+        {isAuth && user && (
           <Box sx={{ mt: 1 }}>
             <Typography>
               <strong>Username:</strong> {user.username}
@@ -33,11 +34,13 @@ export const AuthStatusCard: React.FC = () => {
                 component="span"
                 sx={{ fontSize: 12, wordBreak: 'break-all', ml: 1 }}
               >
-                {accessToken ? `${accessToken.substring(0, 20)}...` : '無'}
+                {user.accessToken
+                  ? `${user.accessToken.substring(0, 20)}...`
+                  : '無'}
               </Box>
             </Typography>
           </Box>
-        )} */}
+        )}
       </Box>
     </Paper>
   );
