@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
-import { useAuth } from '@/providers/auth/useAuth';
+
+import { useAuth } from '@/providers/auth/hook';
 
 import {
   getAuthUserOptions,
@@ -20,7 +21,7 @@ export const useLoginAuth = () => {
 export const useRefreshToken = () => {
   const { isAuthLoading } = useAuth();
   const mutation = useMutation(refreshTokenOptions);
-  
+
   return {
     ...mutation,
     isAuthLoading, // 使用 auth provider 的 loading 狀態
