@@ -6,7 +6,7 @@ import { useAuth } from '@/providers/auth/hook';
 // 路徑依你的專案
 
 export const AuthStatusCard: React.FC = () => {
-  const { isAuth, user, accessToken } = useAuth();
+  const { isAuth, accessToken } = useAuth();
   return (
     <Paper elevation={2} sx={{ p: 3, bgcolor: '#f9fafb' }}>
       <Typography fontWeight="bold" gutterBottom variant="h6">
@@ -16,7 +16,7 @@ export const AuthStatusCard: React.FC = () => {
         <Typography>
           <strong>登入狀態:</strong> {isAuth ? '已登入' : '未登入'}
         </Typography>
-        {isAuth && user && (
+        {/* {isAuth && user && (
           <Box sx={{ mt: 1 }}>
             <Typography>
               <strong>Username:</strong> {user.username}
@@ -37,7 +37,7 @@ export const AuthStatusCard: React.FC = () => {
               </Box>
             </Typography>
           </Box>
-        )}
+        )} */}
       </Box>
     </Paper>
   );

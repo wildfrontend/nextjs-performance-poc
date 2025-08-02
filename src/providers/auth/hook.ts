@@ -6,7 +6,6 @@ interface AuthState {
   isAuthLoading: boolean;
   accessToken?: string;
   refreshToken?: string;
-  user?: any;
   tokenMutex: Mutex;
   updateAuthorization: (
     accessToken: string,
@@ -19,14 +18,12 @@ interface AuthState {
   acquireTokenLock: () => Promise<() => void>;
 }
 
-// 直接提供 useAuth hook
 export const useAuth = () => {
   const {
     isAuth,
     isAuthLoading,
     accessToken,
     refreshToken,
-    user,
     logout,
     getValidToken,
     acquireTokenLock,
@@ -40,8 +37,6 @@ export const useAuth = () => {
     isAuthLoading,
     accessToken,
     refreshToken,
-    user,
-
     // Actions
     logout,
     getValidToken,
@@ -56,19 +51,14 @@ const useAuthStatusStore = create<AuthState>((set, get) => ({
   isAuthLoading: false,
   accessToken: undefined,
   refreshToken: undefined,
-  user: undefined,
   tokenMutex: new Mutex(),
 
-  updateAuthorization: (
-    accessToken: string,
-    refreshToken: string,
-    user?: any
-  ) => {
+  updateAuthorization: (accessToken: string, refreshToken: string) => {
     console.log('updateAuthorization', {
-      accessToken: accessToken?.substring(0, 20) + '...',
-      refreshToken: refreshToken?.substring(0, 20) + '...',
+      accessToken,
+      refreshToken,
     });
-    return set({ isAuth: !!accessToken, accessToken, refreshToken, user });
+    return set({ isAuth: !!accessToken, accessToken, refreshToken });
   },
 
   toggleAuthLoading: (isAuthLoading: boolean) => {
@@ -81,7 +71,6 @@ const useAuthStatusStore = create<AuthState>((set, get) => ({
       isAuth: false,
       accessToken: undefined,
       refreshToken: undefined,
-      user: undefined,
     });
   },
 
@@ -103,17 +92,17 @@ const useAuthStatusStore = create<AuthState>((set, get) => ({
       if (!currentToken) {
         return null;
       }
-
       // 這裡可以加入更詳細的 token 有效性檢查
       // 例如檢查 JWT 的過期時間
-
       return currentToken;
     });
   },
 
   acquireTokenLock: async () => {
     const { tokenMutex } = get();
+    console.log('locking...')
     const release = await tokenMutex.acquire();
+    console.log('release')
     return release;
   },
 }));

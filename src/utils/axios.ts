@@ -1,10 +1,10 @@
 import Axios from 'axios';
 
-import { setupAuthInterceptor } from './auth-interceptor';
-
 export const dummyjsonAxios = Axios.create({
   baseURL: 'https://dummyjson.com',
+  withCredentials: true,
 });
 
-// 設置 auth interceptor
-setupAuthInterceptor(dummyjsonAxios);
+export const nextjsAxios = Axios.create({
+  withCredentials: true,
+});
