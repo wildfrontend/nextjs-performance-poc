@@ -1,6 +1,5 @@
 import { HydrationBoundary, dehydrate } from '@tanstack/react-query';
 import React from 'react';
-import { z } from 'zod';
 
 import { getProductsByCategoryOptions } from '@/apis/dummyjson/products/query-options';
 import CategoryProductList from '@/components/react-query/products/category/list';

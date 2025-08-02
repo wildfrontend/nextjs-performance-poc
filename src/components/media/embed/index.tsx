@@ -9,11 +9,11 @@ const YoutubeHero: React.FC<{
     <div className="relative w-full h-[50vh] max-h-screen overflow-hidden bg-gradient-to-b from-black/50 via-transparent to-black/80">
       {/* YouTube 背景影片 */}
       <iframe
+        allow="autoplay; encrypted-media; fullscreen"
         className="absolute z-10 top-0 left-0 w-full h-full object-cover"
+        referrerPolicy="strict-origin-when-cross-origin"
         src={`https://www.youtube.com/embed/${videoId}?autoplay=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&modestbranding=0`}
         title="YouTube video player"
-        allow="autoplay; encrypted-media; fullscreen"
-        referrerPolicy="strict-origin-when-cross-origin"
       ></iframe>
     </div>
   );

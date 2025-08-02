@@ -19,6 +19,8 @@ import {
 import { JSX, useState } from 'react';
 import { Controller, useFieldArray, useForm } from 'react-hook-form';
 
+import useQueryParams from '@/hooks/query-params';
+
 import ActiveSelect from '../fields/active';
 import ParentIdSelect from '../fields/parent-id';
 import QueryKeySelect from '../fields/query-key';
@@ -32,8 +34,12 @@ import {
   SizeField,
   StatusField,
 } from '../types/value';
-import { formatFormValues, formatToQueryParams, getValidationRule, parseQueryParamsToFormValue } from '../utils/validate';
-import useQueryParams from '@/hooks/query-params';
+import {
+  formatFormValues,
+  formatToQueryParams,
+  getValidationRule,
+  parseQueryParamsToFormValue,
+} from '../utils/validate';
 
 const FieldArrayForm: React.FC = () => {
   const [result, setResult] = useState<any>();
@@ -66,14 +72,10 @@ const FieldArrayForm: React.FC = () => {
         icon={<FilterOutlined />}
         onClick={() => {
           setOpen(true);
-          const defaultValue = urlSearchParams.get('filters')
+          const defaultValue = urlSearchParams.get('filters');
           if (defaultValue) {
-            setValue(
-              'filters',
-              parseQueryParamsToFormValue(defaultValue)
-            );
+            setValue('filters', parseQueryParamsToFormValue(defaultValue));
           }
-
         }}
       />
       <Modal
@@ -84,7 +86,7 @@ const FieldArrayForm: React.FC = () => {
             key="clear"
             onClick={() => {
               reset();
-              setResult(undefined)
+              setResult(undefined);
               removeQueryParams('filters');
             }}
           >

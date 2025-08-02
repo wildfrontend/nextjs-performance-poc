@@ -11,58 +11,56 @@ import './styles.css';
 
 const DefaultSlider = () => {
   return (
-
     <Swiper
       autoplay={{
         delay: 2500,
         disableOnInteraction: false,
       }}
-      navigation
-      modules={[Autoplay, Navigation]}
       className="mySwiper"
+      modules={[Autoplay, Navigation]}
+      navigation
     >
       <SwiperSlide>
         <Image
-          width={1600}
+          alt="1"
           height={900}
           src={
             'https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA'
           }
-          alt="1"
+          width={1600}
         />
       </SwiperSlide>
       <SwiperSlide>
         <Image
-          width={1600}
+          alt="2"
           height={900}
           src={
             'https://fastly.picsum.photos/id/29/4000/2670.jpg?hmac=rCbRAl24FzrSzwlR5tL-Aqzyu5tX_PA95VJtnUXegGU'
           }
-          alt="2"
+          width={1600}
         />
       </SwiperSlide>
       <SwiperSlide>
         <Image
-          width={1600}
+          alt="3"
           height={900}
           src={
             'https://fastly.picsum.photos/id/27/3264/1836.jpg?hmac=p3BVIgKKQpHhfGRRCbsi2MCAzw8mWBCayBsKxxtWO8g'
           }
-          alt="3"
+          width={1600}
         />
       </SwiperSlide>{' '}
       <SwiperSlide>
         <Image
-          width={1600}
+          alt="4"
           height={900}
           src={
             'https://fastly.picsum.photos/id/26/4209/2769.jpg?hmac=vcInmowFvPCyKGtV7Vfh7zWcA_Z0kStrPDW3ppP0iGI'
           }
-          alt="4"
+          width={1600}
         />
       </SwiperSlide>
     </Swiper>
-
   );
 };
 

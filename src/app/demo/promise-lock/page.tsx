@@ -1,8 +1,8 @@
 'use client';
 
-import PromiseLockDemo from '@/components/promise-lock';
 import { Container, Typography } from '@mui/material';
 
+import PromiseLockDemo from '@/components/promise-lock';
 
 const Page = () => {
   return (
@@ -10,7 +10,7 @@ const Page = () => {
       <Typography gutterBottom variant="h4">
         Promise Lock Demo
       </Typography>
-      <PromiseLockDemo/>
+      <PromiseLockDemo />
     </Container>
   );
 };

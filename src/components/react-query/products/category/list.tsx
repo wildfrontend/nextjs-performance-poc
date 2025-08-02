@@ -27,7 +27,7 @@ const CategoryProductList: React.FC = () => {
         .string()
         .optional()
         .transform((val) => {
-          return val === "null" ? undefined : val;
+          return val === 'null' ? undefined : val;
         })
         .parse(urlSearchParams.get('page')),
     },
@@ -65,8 +65,8 @@ const CategoryProductList: React.FC = () => {
                 <p>{item.category}</p>
                 <div className="card-actions justify-end">
                   <Link
-                    href={generateProductLink(item.id)}
                     className="btn btn-primary"
+                    href={generateProductLink(item.id)}
                   >
                     Buy Now
                   </Link>

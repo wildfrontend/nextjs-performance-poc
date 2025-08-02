@@ -16,7 +16,7 @@ const Page: React.FC<{
   const { productId } = await params;
   try {
     const product = await getProductBySSR(productId);
-    console.log(product)
+    console.log(product);
     return (
       <ProductProvider product={product}>
         <ProductDetail />

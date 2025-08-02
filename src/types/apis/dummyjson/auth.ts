@@ -1,4 +1,3 @@
-
 export type RefreshTokenRequest = {
   refreshToken?: string;
   expiresInMins?: number;
@@ -32,7 +31,6 @@ export type LoginUserResponse = {
   accessToken: string;
   refreshToken: string;
 };
-
 
 export type GetUserResponse = {
   id: number;

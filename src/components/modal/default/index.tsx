@@ -17,21 +17,21 @@ const DefaultModal: React.FC = () => {
 
   return (
     <Modal
-      open={open}
-      onClose={handleClose}
-      aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
+      aria-labelledby="modal-modal-title"
+      onClose={handleClose}
+      open={open}
     >
       <Box sx={{ width: '500px', height: '400px', margin: '0 auto' }}>
         <Image
-          width={600}
+          alt="1"
           height={450}
           src={
             'https://fastly.picsum.photos/id/28/4928/3264.jpg?hmac=GnYF-RnBUg44PFfU5pcw_Qs0ReOyStdnZ8MtQWJqTfA'
           }
-          alt="1"
+          width={600}
         />
-        <Typography id="modal-modal-title" variant="h6" component="h2">
+        <Typography component="h2" id="modal-modal-title" variant="h6">
           Text in a modal
         </Typography>
         <Typography id="modal-modal-description" sx={{ mt: 2 }}>

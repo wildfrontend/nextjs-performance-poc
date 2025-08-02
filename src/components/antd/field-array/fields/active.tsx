@@ -10,8 +10,8 @@ const ActiveSelect: React.FC<{
     <Select
       onChange={onChange}
       options={[
-        { label: 'On', value: "true" },
-        { label: 'Off', value: "false" },
+        { label: 'On', value: 'true' },
+        { label: 'Off', value: 'false' },
       ]}
       style={{ width: '100%' }}
       value={value}

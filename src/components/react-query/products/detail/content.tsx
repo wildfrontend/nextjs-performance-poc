@@ -1,5 +1,6 @@
-import { Product } from "@/types/pages/products";
-import Image from "next/image";
+import Image from 'next/image';
+
+import { Product } from '@/types/pages/products';
 
 const ProductContent: React.FC<{ product: Product }> = ({ product }) => {
   return (
@@ -8,11 +9,11 @@ const ProductContent: React.FC<{ product: Product }> = ({ product }) => {
         <div>
           <div className="border rounded-lg overflow-hidden">
             <Image
-              src={product.images[0]}
               alt={product.title}
-              width={500}
-              height={500}
               className="w-full h-auto"
+              height={500}
+              src={product.images[0]}
+              width={500}
             />
           </div>
           <div className="flex space-x-2 mt-4"></div>
@@ -69,10 +70,9 @@ const ProductContent: React.FC<{ product: Product }> = ({ product }) => {
         <h2 className="text-xl font-bold mb-4">Customer Reviews</h2>
         {product.reviews.length > 0 ? (
           product.reviews.map((review, index) => (
-            <div key={index} className="border-b py-3">
+            <div className="border-b py-3" key={index}>
               <p className="text-sm text-gray-500">
-                {review.reviewerName} -{' '}
-                {review.date}
+                {review.reviewerName} - {review.date}
               </p>
               <p className="text-yellow-500">⭐ {review.rating} / 5</p>
               <p className="text-gray-700">{review.comment}</p>
@@ -83,7 +83,7 @@ const ProductContent: React.FC<{ product: Product }> = ({ product }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductContent
+export default ProductContent;

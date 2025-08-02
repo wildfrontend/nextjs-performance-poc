@@ -1,3 +1,5 @@
+import { AxiosRequestConfig } from 'axios';
+
 import type {
   GetAuthResourcesResponse,
   GetUserResponse,
@@ -24,12 +26,15 @@ export const loginAuth = async (data?: LoginUserRequest) => {
   return response.data;
 };
 
-export const getAuthUser = async () => {
-  const response = await dummyjsonAxios.get<GetUserResponse>('/auth/me');
+export const getAuthUser = async (config: AxiosRequestConfig) => {
+  const response = await dummyjsonAxios.get<GetUserResponse>('/auth/me', {
+    signal: config.signal,
+  });
   return response.data;
 };
 
 export const postAuthResources = async () => {
-  const response = await dummyjsonAxios.post<GetAuthResourcesResponse>('/auth/RESOURCE');
+  const response =
+    await dummyjsonAxios.post<GetAuthResourcesResponse>('/auth/RESOURCE');
   return response.data;
 };
