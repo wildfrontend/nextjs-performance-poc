@@ -1,8 +1,9 @@
 import axios, { AxiosError, AxiosHeaders, HttpStatusCode } from 'axios';
 import { useEffect, useMemo } from 'react';
 
-import useAuth from './auth';
 import { dummyjsonAxios } from '@/utils/axios';
+
+import useAuth from './auth';
 
 type RequestBeforeFunction = Parameters<
   typeof axios.interceptors.request.use
@@ -39,6 +40,7 @@ const useDummyjsonInterceptor = () => {
 
   const responseError: ResponseErrorFunction = useMemo(
     () => async (error: AxiosError<any>) => {
+      const originalRequest = error.config;
       if (error.response?.status === HttpStatusCode.Unauthorized) {
         console.log('Unauthorized', error);
         try {
@@ -46,7 +48,20 @@ const useDummyjsonInterceptor = () => {
             throw 'over retry time';
           }
           setRefreshTime((state) => (state ?? 0) + 1);
+
+          // 嘗試刷新 token
           await onRefreshToken({ refreshToken, expiresInMins: 1 });
+
+          // 拿最新 accessToken (建議存在 context/zustand/localStorage)
+          const newToken = window.localStorage.getItem('accessToken'); // 改成你全局 state
+          if (originalRequest && newToken) {
+            (originalRequest.headers as AxiosHeaders).set(
+              'Authorization',
+              `Bearer ${newToken}`
+            );
+            // 重新發送原本的 request
+            return dummyjsonAxios(originalRequest);
+          }
         } catch (error) {
           console.log('refresh client error');
           onLogout();
@@ -60,7 +75,10 @@ const useDummyjsonInterceptor = () => {
 
   useEffect(() => {
     const request = dummyjsonAxios.interceptors.request.use(requestBefore);
-    const response = dummyjsonAxios.interceptors.response.use(undefined, responseError);
+    const response = dummyjsonAxios.interceptors.response.use(
+      undefined,
+      responseError
+    );
     return () => {
       dummyjsonAxios.interceptors.request.eject(request);
       dummyjsonAxios.interceptors.response.eject(response);

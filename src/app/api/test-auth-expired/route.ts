@@ -6,4 +6,4 @@ export async function GET(request: NextRequest) {
     { error: 'Token expired - forced test endpoint' },
     { status: 401 }
   );
-} 
+}

@@ -16,7 +16,7 @@ const PromiseLockDemo = () => {
       <Stack spacing={4}>
         <LoginForm />
         <AuthStatusCard />
-        <ProtectedStatusCard/>
+        <ProtectedStatusCard />
         <ConcurrentTestCard />
         <FeatureIntroCard />
         <TestStepsCard />

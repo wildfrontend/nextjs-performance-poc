@@ -56,7 +56,8 @@ export const FeatureIntroCard: React.FC = () => (
         <ListItemText
           primary={
             <>
-              <strong>多來源 API 支援:</strong> 同時支援 DummyJSON 和 NextJS API 的 token 管理
+              <strong>多來源 API 支援:</strong> 同時支援 DummyJSON 和 NextJS API
+              的 token 管理
             </>
           }
         />
@@ -85,7 +86,8 @@ export const FeatureIntroCard: React.FC = () => (
         <ListItemText
           primary={
             <>
-              <strong>並發測試:</strong> 提供測試工具驗證 async-lock 在實際並發場景中的效果
+              <strong>並發測試:</strong> 提供測試工具驗證 async-lock
+              在實際並發場景中的效果
             </>
           }
         />

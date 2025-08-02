@@ -1,8 +1,9 @@
 import axios, { AxiosError, AxiosHeaders, HttpStatusCode } from 'axios';
 import { useEffect, useMemo } from 'react';
 
-import useAuth from './auth';
 import { nextjsAxios } from '@/utils/axios';
+
+import useAuth from './auth';
 
 type RequestBeforeFunction = Parameters<
   typeof axios.interceptors.request.use
@@ -39,6 +40,7 @@ const useNextjsInterceptor = () => {
 
   const responseError: ResponseErrorFunction = useMemo(
     () => async (error: AxiosError<any>) => {
+      const originalRequest = error.config;
       if (error.response?.status === HttpStatusCode.Unauthorized) {
         console.log('NextJS API Unauthorized', error);
         try {
@@ -46,7 +48,23 @@ const useNextjsInterceptor = () => {
             throw 'over retry time';
           }
           setRefreshTime((state) => (state ?? 0) + 1);
+
+          // 這裡等待 token 刷新
           await onRefreshToken({ refreshToken, expiresInMins: 1 });
+
+          // *** 關鍵：帶著新 accessToken 重送原本的 request ***
+          // 取得最新 accessToken
+          // 注意：用 useAuth() 可能會抓到舊的值，建議設計 onRefreshToken 回傳新 token，或用 context/ref 管理最新 accessToken
+
+          const newToken = window.localStorage.getItem('accessToken'); // or 你的全局 state
+          if (originalRequest && newToken) {
+            (originalRequest.headers as AxiosHeaders).set(
+              'Authorization',
+              `Bearer ${newToken}`
+            );
+            // 用 nextjsAxios 重新發送
+            return nextjsAxios(originalRequest);
+          }
         } catch (error) {
           console.log('NextJS refresh client error');
           onLogout();
@@ -57,10 +75,13 @@ const useNextjsInterceptor = () => {
     },
     [refreshTime, setRefreshTime, onRefreshToken, refreshToken, onLogout]
   );
-
+  
   useEffect(() => {
     const request = nextjsAxios.interceptors.request.use(requestBefore);
-    const response = nextjsAxios.interceptors.response.use(undefined, responseError);
+    const response = nextjsAxios.interceptors.response.use(
+      undefined,
+      responseError
+    );
     return () => {
       nextjsAxios.interceptors.request.eject(request);
       nextjsAxios.interceptors.response.eject(response);
