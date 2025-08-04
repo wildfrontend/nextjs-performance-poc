@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosHeaders, HttpStatusCode } from 'axios';
 import { useEffect, useMemo } from 'react';
 
-import { dummyjsonAxios } from '@/utils/axios';
+import { nextjs2Axios } from '@/utils/axios';
 
 import useAuth from './auth';
 
@@ -13,7 +13,7 @@ type ResponseErrorFunction = Parameters<
   typeof axios.interceptors.response.use
 >['1'];
 
-const useDummyjsonInterceptor = () => {
+const useNextjs2Interceptor = () => {
   const {
     accessToken,
     refreshToken,
@@ -50,17 +50,17 @@ const useDummyjsonInterceptor = () => {
           setRefreshTime((state) => (state ?? 0) + 1);
 
           // 嘗試刷新 token
-          await onRefreshToken({ refreshToken, expiresInMins: 1 });
+          await onRefreshToken({ refreshToken });
 
           // 拿最新 accessToken (建議存在 context/zustand/localStorage)
-          const newToken = window.localStorage.getItem('accessToken'); // 改成你全局 state
+          const newToken = accessToken; // 改成你全局 state
           if (originalRequest && newToken) {
             (originalRequest.headers as AxiosHeaders).set(
               'Authorization',
               `Bearer ${newToken}`
             );
             // 重新發送原本的 request
-            return dummyjsonAxios(originalRequest);
+            return nextjs2Axios(originalRequest);
           }
         } catch (error) {
           console.log('refresh client error');
@@ -70,20 +70,27 @@ const useDummyjsonInterceptor = () => {
       // default error
       return Promise.reject(error);
     },
-    [refreshTime, setRefreshTime, onRefreshToken, refreshToken, onLogout]
+    [
+      refreshTime,
+      setRefreshTime,
+      onRefreshToken,
+      refreshToken,
+      accessToken,
+      onLogout,
+    ]
   );
 
   useEffect(() => {
-    const request = dummyjsonAxios.interceptors.request.use(requestBefore);
-    const response = dummyjsonAxios.interceptors.response.use(
+    const request = nextjs2Axios.interceptors.request.use(requestBefore);
+    const response = nextjs2Axios.interceptors.response.use(
       undefined,
       responseError
     );
     return () => {
-      dummyjsonAxios.interceptors.request.eject(request);
-      dummyjsonAxios.interceptors.response.eject(response);
+      nextjs2Axios.interceptors.request.eject(request);
+      nextjs2Axios.interceptors.response.eject(response);
     };
   }, [requestBefore, responseError]);
 };
 
-export default useDummyjsonInterceptor;
+export default useNextjs2Interceptor;

@@ -1,4 +1,4 @@
-import { nextjsAxios } from "@/utils/axios";
+import { nextjs2Axios, nextjsAxios } from "@/utils/axios";
 import { AxiosRequestConfig } from "axios";
 
 export const getNextjsProfile = (config?: AxiosRequestConfig) => {
@@ -6,5 +6,5 @@ export const getNextjsProfile = (config?: AxiosRequestConfig) => {
 };
 
 export const getNextjsUserOrder = (config?: AxiosRequestConfig) => {
-  return nextjsAxios.get('/user/orders', config);
+  return nextjs2Axios.get('/user/orders', config);
 };

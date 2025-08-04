@@ -9,7 +9,7 @@ export type LoginNextjsApiResponse = {
 };
 
 export type RefreshNextjsTokenRequest = {
-  refreshToken: string;
+  refreshToken?: string;
 };
 
 export type RefreshNextjsTokenResponse = {

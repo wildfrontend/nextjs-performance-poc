@@ -50,13 +50,13 @@ const useNextjsInterceptor = () => {
           setRefreshTime((state) => (state ?? 0) + 1);
 
           // 這裡等待 token 刷新
-          await onRefreshToken({ refreshToken, expiresInMins: 1 });
+          await onRefreshToken({ refreshToken });
 
           // *** 關鍵：帶著新 accessToken 重送原本的 request ***
           // 取得最新 accessToken
           // 注意：用 useAuth() 可能會抓到舊的值，建議設計 onRefreshToken 回傳新 token，或用 context/ref 管理最新 accessToken
 
-          const newToken = window.localStorage.getItem('accessToken'); // or 你的全局 state
+          const newToken = accessToken; // or 你的全局 state
           if (originalRequest && newToken) {
             (originalRequest.headers as AxiosHeaders).set(
               'Authorization',
@@ -73,9 +73,9 @@ const useNextjsInterceptor = () => {
       // default error
       return Promise.reject(error);
     },
-    [refreshTime, setRefreshTime, onRefreshToken, refreshToken, onLogout]
+    [refreshTime, setRefreshTime, onRefreshToken, refreshToken, accessToken, onLogout]
   );
-  
+
   useEffect(() => {
     const request = nextjsAxios.interceptors.request.use(requestBefore);
     const response = nextjsAxios.interceptors.response.use(
