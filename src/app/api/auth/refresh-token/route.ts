@@ -7,15 +7,23 @@ export async function POST(req: NextRequest) {
   const { refreshToken } = await req.json();
 
   try {
-    // 驗證 refreshToken
+    // 驗證傳入的 refreshToken
     const payload = jwt.verify(refreshToken, secret) as jwt.JwtPayload;
 
-    // 產生新 accessToken
+    // 產生新 accessToken（短效）
     const newAccessToken = jwt.sign({ username: payload.username }, secret, {
       expiresIn: '10s',
     });
 
-    return NextResponse.json({ accessToken: newAccessToken });
+    // 產生新 refreshToken（長效）
+    const newRefreshToken = jwt.sign({ username: payload.username }, secret, {
+      expiresIn: '1h',
+    });
+
+    return NextResponse.json({
+      accessToken: newAccessToken,
+      refreshToken: newRefreshToken,
+    });
   } catch (err) {
     return NextResponse.json(
       { error: 'Invalid refresh token', errorCode: 'Unauthorized' },

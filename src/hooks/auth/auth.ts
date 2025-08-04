@@ -1,14 +1,14 @@
 import { useLocalStorageState, useRequest } from 'ahooks';
 import { Mutex } from 'async-mutex';
 
-import { loginAuth, refreshAuthToken } from '@/apis/dummyjson/auth/api';
 import useAuthStatusStore from '@/providers/auth/hook';
+import { loginNextjsApi, refreshNextjsApi } from '@/apis/nextjs/auth/api';
 
 const mutex = new Mutex();
 
-let refreshPromise: ReturnType<typeof refreshAuthToken> | null = null;
+let refreshPromise: ReturnType<typeof refreshNextjsApi> | null = null;
 
-type RefreshTokenRequest = Parameters<typeof refreshAuthToken>['0'];
+type RefreshTokenRequest = Parameters<typeof refreshNextjsApi>['0'];
 
 async function refreshAuthTokenWithLock(args: RefreshTokenRequest) {
   // 若有正在進行中的 promise，就直接回傳它
@@ -16,7 +16,7 @@ async function refreshAuthTokenWithLock(args: RefreshTokenRequest) {
 
   refreshPromise = mutex.runExclusive(async () => {
     try {
-      return await refreshAuthToken(args);
+      return await refreshNextjsApi(args);
     } finally {
       // 無論成功失敗都要重設
       refreshPromise = null;
@@ -43,12 +43,12 @@ const useAuth = () => {
     }
   );
 
-  const { loading: isAuthorizing, run: onLogin } = useRequest(loginAuth, {
+  const { loading: isAuthorizing, run: onLogin } = useRequest(loginNextjsApi, {
     manual: true,
     onSuccess: (res) => {
       updateAuthorization({
-        accessToken: res.accessToken,
-        refreshToken: res.refreshToken,
+        accessToken: res.data.accessToken,
+        refreshToken: res.data.refreshToken,
       });
     },
   });
@@ -60,8 +60,8 @@ const useAuth = () => {
     },
     onSuccess: (res) => {
       updateAuthorization({
-        accessToken: res.accessToken,
-        refreshToken: res.refreshToken,
+        accessToken: res.data.accessToken,
+        refreshToken: res.data.refreshToken,
       });
     },
     onFinally: () => {

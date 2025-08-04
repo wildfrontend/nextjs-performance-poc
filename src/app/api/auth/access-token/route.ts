@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     // 產生 refresh token，可以比較長
     const refreshToken = jwt.sign(payload, secret, { expiresIn: '1h' })
 
-    return NextResponse.json({ accessToken, refreshToken })
+    return NextResponse.json({  accessToken, refreshToken })
   }
 
   return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 })

@@ -3,16 +3,16 @@ import React from 'react';
 
 import useAuth from '@/hooks/auth/auth';
 
-const username = 'emilys';
-const password = 'emilyspass';
+const username = 'user';
+const password = 'pass';
 
 export const LoginForm: React.FC = () => {
   const { isRefreshing, isAuthorizing, onLogin } = useAuth();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onLogin({ username, password, expiresInMins: 1 });
+    onLogin({ username, password,});
   };
-
+  
   return (
     <Paper elevation={1} sx={{ p: 3 }}>
       <Typography fontWeight="bold" gutterBottom variant="h6">
@@ -54,8 +54,8 @@ export const LoginForm: React.FC = () => {
       </Box>
       <Box sx={{ mt: 3, color: 'text.secondary', fontSize: 14 }}>
         <Typography>測試帳號:</Typography>
-        <Typography>Username: emilys</Typography>
-        <Typography>Password: emilyspass</Typography>
+        <Typography>Username: {username}</Typography>
+        <Typography>Password: {password}</Typography>
       </Box>
     </Paper>
   );
