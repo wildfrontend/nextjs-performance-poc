@@ -44,11 +44,6 @@ const useNextjs2Interceptor = () => {
       if (error.response?.status === HttpStatusCode.Unauthorized) {
         console.log('Unauthorized', error);
         try {
-          if ((refreshTime ?? 0) > 1) {
-            throw 'over retry time';
-          }
-          setRefreshTime((state) => (state ?? 0) + 1);
-
           // 嘗試刷新 token
           await onRefreshToken({ refreshToken });
 
@@ -70,14 +65,7 @@ const useNextjs2Interceptor = () => {
       // default error
       return Promise.reject(error);
     },
-    [
-      refreshTime,
-      setRefreshTime,
-      onRefreshToken,
-      refreshToken,
-      accessToken,
-      onLogout,
-    ]
+    [onRefreshToken, refreshToken, accessToken, onLogout]
   );
 
   useEffect(() => {

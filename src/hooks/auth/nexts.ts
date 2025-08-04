@@ -17,10 +17,8 @@ const useNextjsInterceptor = () => {
   const {
     accessToken,
     refreshToken,
-    refreshTime,
     onLogout,
     onRefreshToken,
-    setRefreshTime,
   } = useAuth();
 
   const requestBefore: RequestBeforeFunction = useMemo(
@@ -44,11 +42,6 @@ const useNextjsInterceptor = () => {
       if (error.response?.status === HttpStatusCode.Unauthorized) {
         console.log('NextJS API Unauthorized', error);
         try {
-          if ((refreshTime ?? 0) > 1) {
-            throw 'over retry time';
-          }
-          setRefreshTime((state) => (state ?? 0) + 1);
-
           // 這裡等待 token 刷新
           await onRefreshToken({ refreshToken });
 
@@ -73,7 +66,7 @@ const useNextjsInterceptor = () => {
       // default error
       return Promise.reject(error);
     },
-    [refreshTime, setRefreshTime, onRefreshToken, refreshToken, accessToken, onLogout]
+    [onRefreshToken, refreshToken, accessToken, onLogout]
   );
 
   useEffect(() => {
