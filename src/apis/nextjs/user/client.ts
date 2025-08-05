@@ -8,9 +8,7 @@ import { getNextjsUserOptions } from './query-options';
 
 export const useFetchNextjsUser = () => {
   const { isAuth } = useAuthStatusStore();
-  const query = useQuery(
-    getNextjsUserOptions({ enabled: isAuth })
-  );
+  const query = useQuery(getNextjsUserOptions({ enabled: isAuth }));
   return { ...query, isAuth };
 };
 
@@ -20,7 +18,7 @@ export const useFetchUserOrder = () => {
     () => getNextjsUserOrder(),
     {
       ready: isAuth,
-      pollingInterval:1_000,
+      pollingInterval: 1_000,
     }
   );
   return { data, error, loading, run, refresh, mutate, isAuth };

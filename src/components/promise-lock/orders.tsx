@@ -16,21 +16,21 @@ export const OrdersCard: React.FC = () => {
   const orders = data?.data?.orders || [];
 
   return (
-    <Paper elevation={2} sx={{ p: 3, bgcolor: '#f9fafb', maxWidth: 450 }}>
-      <Stack direction="row" alignItems="center" gap={1} mb={1}>
+    <Paper elevation={2} sx={{ p: 3, bgcolor: '#f9fafb', maxWidth: "100%" }}>
+      <Stack alignItems="center" direction="row" gap={1} mb={1}>
         <Typography fontWeight="bold" variant="h6">
           Orders 狀態
         </Typography>
         {isFetching && (
-          <CircularProgress size={20} thickness={5} color="info" />
+          <CircularProgress color="info" size={20} thickness={5} />
         )}
         {isFetching && (
           <Chip
-            label="刷新中"
             color="info"
+            label="刷新中"
             size="small"
-            variant="outlined"
             sx={{ ml: 1 }}
+            variant="outlined"
           />
         )}
       </Stack>
@@ -38,8 +38,8 @@ export const OrdersCard: React.FC = () => {
       <Typography sx={{ mb: 1 }}>
         <strong>登入狀態:</strong>{' '}
         <Chip
-          label={isAuth ? '已登入' : '未登入'}
           color={isAuth ? 'success' : 'default'}
+          label={isAuth ? '已登入' : '未登入'}
           size="small"
         />
       </Typography>
@@ -53,6 +53,7 @@ export const OrdersCard: React.FC = () => {
             <Stack spacing={2}>
               {orders.map((order: any) => (
                 <Paper
+                  elevation={0}
                   key={order.id}
                   sx={{
                     p: 2,
@@ -60,18 +61,17 @@ export const OrdersCard: React.FC = () => {
                     border: '1px solid #e0e0e0',
                     borderRadius: 2,
                   }}
-                  elevation={0}
                 >
                   <Typography fontWeight="bold" sx={{ mb: 0.5 }}>
                     {order.item}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography color="text.secondary" variant="body2">
                     訂單編號：{order.id}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography color="text.secondary" variant="body2">
                     價格：${order.price.toLocaleString()}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography color="text.secondary" variant="body2">
                     持有者：{order.owner}
                   </Typography>
                 </Paper>

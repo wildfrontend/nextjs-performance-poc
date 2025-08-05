@@ -6,7 +6,7 @@ import PromiseLockDemo from '@/components/promise-lock';
 
 const Page = () => {
   return (
-    <Container maxWidth="sm" sx={{ my: 8 }}>
+    <Container maxWidth="lg" sx={{ my: 8 }}>
       <Typography gutterBottom variant="h4">
         Promise Lock Demo
       </Typography>

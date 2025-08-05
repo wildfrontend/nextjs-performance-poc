@@ -8,21 +8,21 @@ export const ProfileStatusCard: React.FC = () => {
   const user = data?.data;
 
   return (
-    <Paper elevation={2} sx={{ p: 3, bgcolor: '#f9fafb', maxWidth: 420 }}>
-      <Stack direction="row" alignItems="center" gap={1} mb={1}>
+    <Paper elevation={2} sx={{ p: 3, bgcolor: '#f9fafb', maxWidth:"100%" }}>
+      <Stack alignItems="center" direction="row" gap={1} mb={1}>
         <Typography fontWeight="bold" variant="h6">
           Protected 狀態
         </Typography>
         {isFetching && (
-          <CircularProgress size={20} thickness={5} color="info" sx={{ ml: 1 }} />
+          <CircularProgress color="info" size={20} sx={{ ml: 1 }} thickness={5} />
         )}
         {isFetching && (
           <Chip
-            label="資料刷新中"
             color="info"
+            label="資料刷新中"
             size="small"
-            variant="outlined"
             sx={{ ml: 1 }}
+            variant="outlined"
           />
         )}
       </Stack>
@@ -31,29 +31,29 @@ export const ProfileStatusCard: React.FC = () => {
         <Typography sx={{ mb: 1 }}>
           <strong>登入狀態:</strong>{' '}
           <Chip
-            label={isAuth ? '已登入' : '未登入'}
             color={isAuth ? 'success' : 'default'}
+            label={isAuth ? '已登入' : '未登入'}
             size="small"
           />
         </Typography>
         {isAuth && user && (
           <Stack gap={2} sx={{ pl: 1 }}>
             <Box>
-              <Typography variant="body2" color="text.secondary">
+              <Typography color="text.secondary" variant="body2">
                 <strong>姓名：</strong>
                 <span style={{ letterSpacing: 1 }}>{user.name}</span>
               </Typography>
             </Box>
             <Box>
-              <Typography variant="body2" color="text.secondary">
+              <Typography color="text.secondary" variant="body2">
                 <strong>Email：</strong>
                 <span style={{ wordBreak: 'break-all' }}>{user.email}</span>
               </Typography>
             </Box>
             <Box>
-              <Typography variant="body2" color="text.secondary">
+              <Typography color="text.secondary" variant="body2">
                 <strong>角色：</strong>
-                <Chip label={user.role} color="primary" size="small" />
+                <Chip color="primary" label={user.role} size="small" />
               </Typography>
             </Box>
           </Stack>
