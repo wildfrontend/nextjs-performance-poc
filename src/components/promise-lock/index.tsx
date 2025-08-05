@@ -2,6 +2,7 @@
 
 import { Stack } from '@mui/material';
 
+import { AuthStateCard } from './auth-state';
 import AxiosInterceptor from './axios';
 import { LoginForm } from './login-form';
 import { OrdersCard } from './orders';
@@ -13,6 +14,7 @@ const PromiseLockDemo = () => {
       <AxiosInterceptor />
       <Stack spacing={4}>
         <LoginForm />
+        <AuthStateCard />
         <ProfileStatusCard />
         <OrdersCard />
       </Stack>
