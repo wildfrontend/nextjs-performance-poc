@@ -14,12 +14,7 @@ type ResponseErrorFunction = Parameters<
 >['1'];
 
 const useNextjsInterceptor = () => {
-  const {
-    accessToken,
-    refreshToken,
-    onLogout,
-    onRefreshToken,
-  } = useAuth();
+  const { accessToken, refreshToken, onLogout, onRefreshToken } = useAuth();
 
   const requestBefore: RequestBeforeFunction = useMemo(
     () => async (config) => {

@@ -6,9 +6,15 @@ import useAuthStatusStore from '@/providers/auth/hook';
 import { getNextjsUserOrder } from './api';
 import { getNextjsUserOptions } from './query-options';
 
-export const useFetchNextjsUser = () => {
+export const useFetchNextjsUser = ({
+  enabledLongpoll,
+}: {
+  enabledLongpoll?: boolean;
+}) => {
   const { isAuth } = useAuthStatusStore();
-  const query = useQuery(getNextjsUserOptions(isAuth));
+  const query = useQuery(
+    getNextjsUserOptions({ enabled: isAuth, enabledLongpoll })
+  );
   return { ...query, isAuth };
 };
 
@@ -19,6 +25,7 @@ export const useFetchUserOrder = () => {
     () => getNextjsUserOrder(),
     {
       ready: isAuth,
+      pollingInterval: 1_000,
     }
   );
 

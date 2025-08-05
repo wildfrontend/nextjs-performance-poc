@@ -1,5 +1,6 @@
-import { nextjs2Axios, nextjsAxios } from "@/utils/axios";
-import { AxiosRequestConfig } from "axios";
+import { AxiosRequestConfig } from 'axios';
+
+import { nextjs2Axios, nextjsAxios } from '@/utils/axios';
 
 export const getNextjsProfile = (config?: AxiosRequestConfig) => {
   return nextjsAxios.get('/user/profile', config);

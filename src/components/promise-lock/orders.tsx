@@ -3,7 +3,6 @@ import React from 'react';
 
 import { useFetchUserOrder } from '@/apis/nextjs/user/client';
 
-
 export const OrdersCard: React.FC = () => {
   const { data, isAuth } = useFetchUserOrder();
   const user = data?.data;
@@ -17,7 +16,9 @@ export const OrdersCard: React.FC = () => {
           <strong>登入狀態:</strong> {isAuth ? '已登入' : '未登入'}
         </Typography>
         {isAuth && user && (
-          <Box component="pre" sx={{ mt: 1 }}>{JSON.stringify(data.data, null, 4)}</Box>
+          <Box component="pre" sx={{ mt: 1 }}>
+            {JSON.stringify(data.data, null, 4)}
+          </Box>
         )}
       </Box>
     </Paper>

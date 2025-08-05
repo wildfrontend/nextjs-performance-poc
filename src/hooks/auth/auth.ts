@@ -1,8 +1,8 @@
 import { useLocalStorageState, useRequest } from 'ahooks';
 import { Mutex } from 'async-mutex';
 
-import useAuthStatusStore from '@/providers/auth/hook';
 import { loginNextjsApi, refreshNextjsApi } from '@/apis/nextjs/auth/api';
+import useAuthStatusStore from '@/providers/auth/hook';
 
 const mutex = new Mutex();
 

@@ -1,4 +1,3 @@
-import { AxiosRequestConfig } from 'axios';
 
 import {
   LoginNextjsApiRequest,
@@ -13,6 +12,8 @@ export const loginNextjsApi = (data: LoginNextjsApiRequest) => {
 };
 
 export const refreshNextjsApi = (data: RefreshNextjsTokenRequest) => {
-  return nextjsAxios.post<RefreshNextjsTokenResponse>('/auth/refresh-token', data);
+  return nextjsAxios.post<RefreshNextjsTokenResponse>(
+    '/auth/refresh-token',
+    data
+  );
 };
-
