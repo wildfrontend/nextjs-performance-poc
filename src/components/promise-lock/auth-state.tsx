@@ -1,5 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import React, { useEffect, useRef, useState } from 'react';
+
 import useAuth from '@/hooks/auth/auth';
 
 function useHighlightOnChange<T>(value: T, duration = 800) {
@@ -120,9 +121,18 @@ export const AuthStateCard = () => {
             </Typography>
           ) : (
             tokenLogs.map((log, i) => (
-              <li key={i} style={{ borderBottom: i < tokenLogs.length - 1 ? '1px solid #e0e0e0' : 'none', padding: '4px 8px' }}>
+              <li
+                key={i}
+                style={{
+                  borderBottom:
+                    i < tokenLogs.length - 1 ? '1px solid #e0e0e0' : 'none',
+                  padding: '4px 8px',
+                }}
+              >
                 <strong>{log.time}</strong>
-                <div style={{ wordBreak: 'break-all', fontFamily: 'monospace' }}>
+                <div
+                  style={{ wordBreak: 'break-all', fontFamily: 'monospace' }}
+                >
                   {log.token || <span style={{ color: '#aaa' }}>null</span>}
                 </div>
               </li>

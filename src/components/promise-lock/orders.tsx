@@ -16,7 +16,7 @@ export const OrdersCard: React.FC = () => {
   const orders = data?.data?.orders || [];
 
   return (
-    <Paper elevation={2} sx={{ p: 3, bgcolor: '#f9fafb', maxWidth: "100%" }}>
+    <Paper elevation={2} sx={{ p: 3, bgcolor: '#f9fafb', maxWidth: '100%' }}>
       <Stack alignItems="center" direction="row" gap={1} mb={1}>
         <Typography fontWeight="bold" variant="h6">
           Orders 狀態

@@ -7,6 +7,7 @@ import AxiosInterceptor from './axios';
 import { LoginForm } from './login-form';
 import { OrdersCard } from './orders';
 import { ProfileStatusCard } from './profile-state';
+import ChatRoom from './chatroom';
 
 const PromiseLockDemo = () => {
   return (
@@ -17,6 +18,7 @@ const PromiseLockDemo = () => {
         <AuthStateCard />
         <ProfileStatusCard />
         <OrdersCard />
+        <ChatRoom/>
       </Stack>
     </>
   );

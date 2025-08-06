@@ -1,6 +1,18 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { io, Socket } from "socket.io-client";
+import {
+  Box,
+  Paper,
+  Typography,
+  TextField,
+  Button,
+  List,
+  ListItem,
+  ListItemText,
+  Stack
+} from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
 
 let socket: Socket;
 
@@ -10,7 +22,6 @@ export default function ChatRoom() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    // 連線到獨立 socket server
     socket = io("http://localhost:8080");
 
     socket.on("chat message", (msg: string) => {
@@ -32,23 +43,57 @@ export default function ChatRoom() {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: "40px auto", padding: 20, border: "1px solid #ccc" }}>
-      <h3>聊天室</h3>
-      <div style={{ minHeight: 200, border: "1px solid #eee", marginBottom: 10, padding: 10 }}>
-        {messages.map((msg, i) => (
-          <div key={i}>{msg}</div>
-        ))}
-      </div>
-      <form onSubmit={handleSend} style={{ display: "flex", gap: 8 }}>
-        <input
-          ref={inputRef}
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="輸入訊息..."
-          style={{ flex: 1 }}
-        />
-        <button type="submit">送出</button>
-      </form>
-    </div>
+    <Box
+      mt={6}
+      mx="auto"
+      px={2}
+    >
+      <Paper elevation={3} sx={{ p: 3 }}>
+        <Typography align="center" gutterBottom variant="h5">
+          聊天室
+        </Typography>
+        <Paper
+          sx={{
+            minHeight: 260,
+            maxHeight: 340,
+            mb: 2,
+            p: 1,
+            overflowY: "auto",
+            bgcolor: "#f9f9f9"
+          }}
+          variant="outlined"
+        >
+          <List dense>
+            {messages.map((msg, i) => (
+              <ListItem disablePadding key={i}>
+                <ListItemText primary={msg} />
+              </ListItem>
+            ))}
+          </List>
+        </Paper>
+        <form onSubmit={handleSend}>
+          <Stack direction="row" spacing={1}>
+            <TextField
+              autoFocus
+              fullWidth
+              inputRef={inputRef}
+              onChange={e => setInput(e.target.value)}
+              placeholder="輸入訊息..."
+              size="small"
+              value={input}
+            />
+            <Button
+              color="primary"
+              disabled={!input.trim()}
+              endIcon={<SendIcon />}
+              type="submit"
+              variant="contained"
+            >
+              送出
+            </Button>
+          </Stack>
+        </form>
+      </Paper>
+    </Box>
   );
 }

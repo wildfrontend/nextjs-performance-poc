@@ -1,4 +1,12 @@
-import { Box, Paper, Stack, Typography, Divider, CircularProgress, Chip } from '@mui/material';
+import {
+  Box,
+  Chip,
+  CircularProgress,
+  Divider,
+  Paper,
+  Stack,
+  Typography,
+} from '@mui/material';
 import React from 'react';
 
 import { useFetchNextjsUser } from '@/apis/nextjs/user/client';
@@ -8,13 +16,18 @@ export const ProfileStatusCard: React.FC = () => {
   const user = data?.data;
 
   return (
-    <Paper elevation={2} sx={{ p: 3, bgcolor: '#f9fafb', maxWidth:"100%" }}>
+    <Paper elevation={2} sx={{ p: 3, bgcolor: '#f9fafb', maxWidth: '100%' }}>
       <Stack alignItems="center" direction="row" gap={1} mb={1}>
         <Typography fontWeight="bold" variant="h6">
           Protected 狀態
         </Typography>
         {isFetching && (
-          <CircularProgress color="info" size={20} sx={{ ml: 1 }} thickness={5} />
+          <CircularProgress
+            color="info"
+            size={20}
+            sx={{ ml: 1 }}
+            thickness={5}
+          />
         )}
         {isFetching && (
           <Chip
@@ -66,14 +79,17 @@ export const ProfileStatusCard: React.FC = () => {
       </Box>
       {/* 額外: 開發時快速看完整資料 */}
       {isAuth && user && (
-        <Box component="pre" sx={{
-          bgcolor: '#eceff1',
-          borderRadius: 1,
-          p: 1,
-          fontSize: 13,
-          mt: 2,
-          overflowX: 'auto'
-        }}>
+        <Box
+          component="pre"
+          sx={{
+            bgcolor: '#eceff1',
+            borderRadius: 1,
+            p: 1,
+            fontSize: 13,
+            mt: 2,
+            overflowX: 'auto',
+          }}
+        >
           {JSON.stringify(user, null, 4)}
         </Box>
       )}
