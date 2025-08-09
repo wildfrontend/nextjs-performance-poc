@@ -1,4 +1,4 @@
-export const envCode = process.env.NODE_ENV ?? 'development';
+export const envCode = process.env.APP_ENV ?? 'development';
 
 export const isDev = envCode === 'development';
 

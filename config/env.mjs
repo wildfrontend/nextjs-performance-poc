@@ -28,6 +28,6 @@ const envVariable = ((env) => {
       return development;
     }
   }
-})(process.env.GOSU_ENV);
+})(process.env.APP_ENV);
 
 export default envVariable;
