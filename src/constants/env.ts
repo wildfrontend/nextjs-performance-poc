@@ -5,5 +5,6 @@ export const isDev = envCode === 'development';
 export const appVersion = `${process.env.NPM_PACKAGE_VERSION} - ${envCode}`;
 
 export const envConfig = {
+  appVersion,
   socketUrl: process.env.SOCKET_URL,
 };
