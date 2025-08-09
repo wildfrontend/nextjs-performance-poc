@@ -1,5 +1,6 @@
-import { hostname } from 'os';
+import envVariable from './config/env.mjs';
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   /* config options here */
   webpack(config) {
@@ -56,6 +57,7 @@ const nextConfig = {
       }
     ],
   },
+  env: envVariable,
   experimental: {
     nextScriptWorkers: true,
   },

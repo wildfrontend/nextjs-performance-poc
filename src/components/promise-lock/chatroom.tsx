@@ -1,35 +1,38 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import { io, Socket } from "socket.io-client";
+'use client';
+
+import SendIcon from '@mui/icons-material/Send';
 import {
   Box,
-  Paper,
-  Typography,
-  TextField,
   Button,
   List,
   ListItem,
   ListItemText,
-  Stack
-} from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
+  Paper,
+  Stack,
+  TextField,
+  Typography,
+} from '@mui/material';
+import { useEffect, useRef, useState } from 'react';
+import { Socket, io } from 'socket.io-client';
+
+import { envConfig } from '@/constants/env';
 
 let socket: Socket;
 
 export default function ChatRoom() {
   const [messages, setMessages] = useState<string[]>([]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    socket = io("http://localhost:8080");
+    socket = io(envConfig.socketUrl);
 
-    socket.on("chat message", (msg: string) => {
+    socket.on('chat message', (msg: string) => {
       setMessages((prev) => [...prev, msg]);
     });
 
     return () => {
-      socket.off("chat message");
+      socket.off('chat message');
       socket.disconnect();
     };
   }, []);
@@ -37,17 +40,13 @@ export default function ChatRoom() {
   const handleSend = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!input.trim()) return;
-    socket.emit("chat message", input);
-    setInput("");
+    socket.emit('chat message', input);
+    setInput('');
     inputRef.current?.focus();
   };
 
   return (
-    <Box
-      mt={6}
-      mx="auto"
-      px={2}
-    >
+    <Box mt={6} mx="auto" px={2}>
       <Paper elevation={3} sx={{ p: 3 }}>
         <Typography align="center" gutterBottom variant="h5">
           聊天室
@@ -58,8 +57,8 @@ export default function ChatRoom() {
             maxHeight: 340,
             mb: 2,
             p: 1,
-            overflowY: "auto",
-            bgcolor: "#f9f9f9"
+            overflowY: 'auto',
+            bgcolor: '#f9f9f9',
           }}
           variant="outlined"
         >
@@ -77,7 +76,7 @@ export default function ChatRoom() {
               autoFocus
               fullWidth
               inputRef={inputRef}
-              onChange={e => setInput(e.target.value)}
+              onChange={(e) => setInput(e.target.value)}
               placeholder="輸入訊息..."
               size="small"
               value={input}
