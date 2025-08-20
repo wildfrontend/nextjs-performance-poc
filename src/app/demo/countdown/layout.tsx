@@ -5,11 +5,9 @@ import MuiThemeProvider from '@/components/ui-framework/mui/theme';
 
 const Layout: React.FC<PropsWithChildren> = ({ children }) => {
   return (
-    <>
-      <AppRouterCacheProvider>
-        <MuiThemeProvider>{children}</MuiThemeProvider>
-      </AppRouterCacheProvider>
-    </>
+    <AppRouterCacheProvider>
+      <MuiThemeProvider>{children}</MuiThemeProvider>
+    </AppRouterCacheProvider>
   );
 };
 

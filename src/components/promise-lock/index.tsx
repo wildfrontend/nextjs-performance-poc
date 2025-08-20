@@ -4,10 +4,10 @@ import { Stack } from '@mui/material';
 
 import { AuthStateCard } from './auth-state';
 import AxiosInterceptor from './axios';
+import ChatRoom from './chatroom';
 import { LoginForm } from './login-form';
 import { OrdersCard } from './orders';
 import { ProfileStatusCard } from './profile-state';
-import ChatRoom from './chatroom';
 
 const PromiseLockDemo = () => {
   return (
@@ -18,7 +18,7 @@ const PromiseLockDemo = () => {
         <AuthStateCard />
         <ProfileStatusCard />
         <OrdersCard />
-        <ChatRoom/>
+        <ChatRoom />
       </Stack>
     </>
   );
