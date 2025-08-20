@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js PoC Collections
 
-## Getting Started
+這是我整理的一個 **Next.js 測試與 Demo 集合**，方便快速測試各種功能與效能。  
+線上預覽：[https://nextjs-poc-collections.vercel.app/](https://nextjs-poc-collections.vercel.app/)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 目錄
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### SVG vs WebP
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- [Default](https://nextjs-poc-collections.vercel.app/svg-vs-webp/svg-in-image) - Icon svg file import by next/image
+- [Icon by SVG](https://nextjs-poc-collections.vercel.app/svg-vs-webp/svg)
+- [Icon by WebP 48x48](https://nextjs-poc-collections.vercel.app/svg-vs-webp/webpx2)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Load More - SVG import](https://nextjs-poc-collections.vercel.app/svg-vs-webp/svg-in-image-loadmore)
+- [Load More - Icon by SVG](https://nextjs-poc-collections.vercel.app/svg-vs-webp/svg-loadmore)
+- [Load More - Icon by WebP 48x48](https://nextjs-poc-collections.vercel.app/svg-vs-webp/webpx2-loadmore)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+### Image Optimize
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next Image](https://nextjs-poc-collections.vercel.app/image-optmize/next-image)
+- [Next Image Load More](https://nextjs-poc-collections.vercel.app/image-optmize/next-image-loadmore)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+### Third Party Optimize
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Default Third party](https://nextjs-poc-collections.vercel.app/third-party-optmize/origin)
+- [Lazy onload](https://nextjs-poc-collections.vercel.app/third-party-optmize/lazy-load)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### React-Query
+
+- [Products](https://nextjs-poc-collections.vercel.app/react-query/products)
+- [Products - Smartphones Story](https://nextjs-poc-collections.vercel.app/react-query/products/categories/smartphones/stories)
+
+---
+
+### Ant-Design
+
+- [Antd Dashboard](https://nextjs-poc-collections.vercel.app/antd)
+
+---
+
+### Slider LCP Performance
+
+- [Swiper - Default](https://nextjs-poc-collections.vercel.app/swiper)
+- [Swiper - Performance](https://nextjs-poc-collections.vercel.app/swiper/performance)
+
+---
+
+### Embeds Performance
+
+- [Media - Default](https://nextjs-poc-collections.vercel.app/media)
+- [Media - Capture](https://nextjs-poc-collections.vercel.app/media/capture)
+
+---
+
+### Demo
+
+- [Countdown 測試頁](https://nextjs-poc-collections.vercel.app/demo/countdown)
+- [PromiseLock 測試頁](https://nextjs-poc-collections.vercel.app/demo/promise-lock)
+- [3D 地球 Demo](https://nextjs-poc-collections.vercel.app/demo/3d-earth)
+
+---
+
+💡 **說明**  
+此專案收錄各種測試與示範，包括 SVG / WebP 影像比較、Next.js Image Optimize、第三方圖像優化、React-Query 使用、Ant Design UI、Slider LCP Performance、Media embeds，以及各種 Demo 頁面。

@@ -1,6 +1,13 @@
-"use client";
+'use client';
 
-import { Typography, Divider, List, ListItem, ListItemText, Container } from "@mui/material";
+import {
+  Container,
+  Divider,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from '@mui/material';
 
 export default function EarthCanvasDocs() {
   return (
@@ -15,7 +22,8 @@ export default function EarthCanvasDocs() {
         1. 功能概述
       </Typography>
       <Typography sx={{ mt: 1 }} variant="body1">
-        這個元件使用 <b>React + React Three Fiber (R3F)</b> 和 <b>Three.js</b> 渲染一個可互動的 3D 地球模型，支援以下功能：
+        這個元件使用 <b>React + React Three Fiber (R3F)</b> 和 <b>Three.js</b>{' '}
+        渲染一個可互動的 3D 地球模型，支援以下功能：
       </Typography>
       <List>
         <ListItem>
@@ -31,7 +39,7 @@ export default function EarthCanvasDocs() {
 
       <Divider sx={{ my: 3 }} />
 
-      <Typography sx={{ mt: 2, fontWeight: "bold" }} variant="subtitle1">
+      <Typography sx={{ mt: 2, fontWeight: 'bold' }} variant="subtitle1">
         Earth3D 元件：
       </Typography>
       <List>
@@ -42,19 +50,34 @@ export default function EarthCanvasDocs() {
           />
         </ListItem>
         <ListItem>
-          <ListItemText primary="camera.position = [x, y, z]" secondary="三維座標陣列表示相機在 3D 空間的位置。右手坐標系中：X → 左右, Y → 上下, Z → 前後。例如 [0,0,5] 表示相機位於畫面前方 5 單位，對準原點 (0,0,0)" />
+          <ListItemText
+            primary="camera.position = [x, y, z]"
+            secondary="三維座標陣列表示相機在 3D 空間的位置。右手坐標系中：X → 左右, Y → 上下, Z → 前後。例如 [0,0,5] 表示相機位於畫面前方 5 單位，對準原點 (0,0,0)"
+          />
         </ListItem>
         <ListItem>
-          <ListItemText primary="ambientLight" secondary="環境光，提供整體照明" />
+          <ListItemText
+            primary="ambientLight"
+            secondary="環境光，提供整體照明"
+          />
         </ListItem>
         <ListItem>
-          <ListItemText primary="directionalLight" secondary="方向光，模擬太陽光效果" />
+          <ListItemText
+            primary="directionalLight"
+            secondary="方向光，模擬太陽光效果"
+          />
         </ListItem>
         <ListItem>
-          <ListItemText primary="<OrbitControls>" secondary="滑鼠旋轉控制器（旋轉啟用，縮放和平移禁用）" />
+          <ListItemText
+            primary="<OrbitControls>"
+            secondary="滑鼠旋轉控制器（旋轉啟用，縮放和平移禁用）"
+          />
         </ListItem>
         <ListItem>
-          <ListItemText primary="<Earth>" secondary="地球物件元件，載入貼圖並旋轉" />
+          <ListItemText
+            primary="<Earth>"
+            secondary="地球物件元件，載入貼圖並旋轉"
+          />
         </ListItem>
         <ListItem>
           <ListItemText
@@ -64,21 +87,33 @@ export default function EarthCanvasDocs() {
         </ListItem>
       </List>
 
-      <Typography sx={{ mt: 2, fontWeight: "bold" }} variant="subtitle1">
+      <Typography sx={{ mt: 2, fontWeight: 'bold' }} variant="subtitle1">
         Earth 元件：
       </Typography>
       <List>
         <ListItem>
-          <ListItemText primary="useLoader(TextureLoader)" secondary="載入地球貼圖" />
+          <ListItemText
+            primary="useLoader(TextureLoader)"
+            secondary="載入地球貼圖"
+          />
         </ListItem>
         <ListItem>
-          <ListItemText primary="useRef" secondary="取得 mesh 實例，方便修改旋轉" />
+          <ListItemText
+            primary="useRef"
+            secondary="取得 mesh 實例，方便修改旋轉"
+          />
         </ListItem>
         <ListItem>
-          <ListItemText primary="useFrame" secondary="每幀更新 mesh 的 Y 軸旋轉，自轉動畫" />
+          <ListItemText
+            primary="useFrame"
+            secondary="每幀更新 mesh 的 Y 軸旋轉，自轉動畫"
+          />
         </ListItem>
         <ListItem>
-          <ListItemText primary="meshStandardMaterial map={colorMap}" secondary="套用貼圖材質" />
+          <ListItemText
+            primary="meshStandardMaterial map={colorMap}"
+            secondary="套用貼圖材質"
+          />
         </ListItem>
       </List>
     </Container>
