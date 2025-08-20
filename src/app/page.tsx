@@ -83,23 +83,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      {/* ANCHOR Ui framwork */}
-      <div>
-        <h2> Ui framwork </h2>
-        <div
-          style={{
-            display: 'flex',
-            gap: '16px',
-          }}
-        >
-          <Link href="/ui-framework/mui" prefetch={false}>
-            MUI
-          </Link>
-          <Link href="/ui-framework/tailwind" prefetch={false}>
-            Tailwindcss
-          </Link>
-        </div>
-      </div>
       {/* ANCHOR fetch ssr */}
       <div>
         <h2>React-Query</h2>

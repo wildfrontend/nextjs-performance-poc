@@ -6,15 +6,15 @@ export default function EarthCanvasDocs() {
   return (
     <Container maxWidth="md" sx={{ py: 6 }}>
       {/* 標題 */}
-      <Typography variant="h3" fontWeight="bold" gutterBottom>
+      <Typography fontWeight="bold" gutterBottom variant="h3">
         3D Earth Canvas 使用說明
       </Typography>
 
       {/* 功能概述 */}
-      <Typography variant="h5" fontWeight="medium" sx={{ mt: 4 }}>
+      <Typography fontWeight="medium" sx={{ mt: 4 }} variant="h5">
         1. 功能概述
       </Typography>
-      <Typography variant="body1" sx={{ mt: 1 }}>
+      <Typography sx={{ mt: 1 }} variant="body1">
         這個元件使用 <b>React + React Three Fiber (R3F)</b> 和 <b>Three.js</b> 渲染一個可互動的 3D 地球模型，支援以下功能：
       </Typography>
       <List>
@@ -31,7 +31,7 @@ export default function EarthCanvasDocs() {
 
       <Divider sx={{ my: 3 }} />
 
-      <Typography variant="subtitle1" sx={{ mt: 2, fontWeight: "bold" }}>
+      <Typography sx={{ mt: 2, fontWeight: "bold" }} variant="subtitle1">
         Earth3D 元件：
       </Typography>
       <List>
@@ -64,7 +64,7 @@ export default function EarthCanvasDocs() {
         </ListItem>
       </List>
 
-      <Typography variant="subtitle1" sx={{ mt: 2, fontWeight: "bold" }}>
+      <Typography sx={{ mt: 2, fontWeight: "bold" }} variant="subtitle1">
         Earth 元件：
       </Typography>
       <List>

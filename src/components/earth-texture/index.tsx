@@ -29,9 +29,9 @@ function Earth3D() {
   return (
     <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
       <ambientLight intensity={0.5} />
-      <directionalLight position={[2, 2, 2]} intensity={1.2} />
+      <directionalLight intensity={1.2} position={[2, 2, 2]} />
       <Earth />
-      <OrbitControls enableZoom enablePan />
+      <OrbitControls enablePan enableZoom />
     </Canvas>
   );
 }
